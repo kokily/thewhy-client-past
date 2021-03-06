@@ -7,3 +7,9 @@ export interface StoryType {
   created_at: string;
   updated_at?: string;
 }
+
+export interface MenuProps {
+  title: string;
+  url: string;
+  items?: { id?: number; subTitle?: string; subUrl?: string }[];
+}

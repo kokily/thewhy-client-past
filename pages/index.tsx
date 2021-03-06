@@ -3,9 +3,10 @@ import { GetServerSideProps } from 'next';
 import { initializeApollo } from '../libs/apollo/client';
 import { LIST_STORIES } from '../libs/graphql/stories';
 import { StoryType } from '../libs/types';
+import PageTemplate from '../components/common/PageTemplate';
 
 function IndexPage() {
-  return <div>IndexPage</div>;
+  return <PageTemplate>IndexPage</PageTemplate>;
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
