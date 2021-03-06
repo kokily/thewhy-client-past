@@ -33,10 +33,63 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
+          <meta name="keywords" content="커뮤니케이션, 교육, 강의" />
+          <meta name="description" content="Community, Education, edu" />
+          <meta name="author" content="thewhy.kr" />
+
+          <link
+            id="googleFonts"
+            href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap"
+            rel="stylesheet"
+            type="text/css"
+          />
+
+          <link rel="stylesheet" href="/css/bootstrap.min.css" />
+          <link rel="stylesheet" href="/css/all.min.css" />
+          <link rel="stylesheet" href="/css/animate.compat.css" />
+          <link rel="stylesheet" href="/css/simple-line-icons.min.css" />
+          <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+          <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+          <link rel="stylesheet" href="/css/magnific-popup.min.css" />
+
+          <link rel="stylesheet" href="/css/theme.css" />
+          <link rel="stylesheet" href="/css/theme-elements.css" />
+          <link rel="stylesheet" href="/css/theme-blog.css" />
+          <link rel="stylesheet" href="/css/theme-shop.css" />
+
+          <link rel="stylesheet" href="/css/component.css" />
+          <link id="skinCSS" rel="stylesheet" href="/css/default.css" />
+          <link rel="stylesheet" href="/css/custom.css" />
+          <script src="/js/modernizr.min.js"></script>
+          <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cec30f2d8f996a53cca24b45925dea37&libraries=services"></script>
+        </Head>
         <body>
           <Main />
           <NextScript />
+          <script src="/js/jquery.min.js"></script>
+          <script src="/js/jquery.appear.min.js"></script>
+          <script src="/js/jquery.easing.min.js"></script>
+          <script src="/js/jquery.cookie.min.js"></script>
+          <script src="/js/popper.min.js"></script>
+          <script src="/js/bootstrap.min.js"></script>
+          <script src="/js/jquery.validate.min.js"></script>
+          <script src="/js/jquery.easypiechart.min.js"></script>
+          <script src="/js/jquery.gmap.min.js"></script>
+          <script src="/js/lazysizes.min.js"></script>
+          <script src="/js/jquery.isotope.min.js"></script>
+          <script src="/js/owl.carousel.min.js"></script>
+          <script src="/js/jquery.magnific-popup.min.js"></script>
+          <script src="/js/jquery.vide.min.js"></script>
+          <script src="/js/vivus.min.js"></script>
+          <script src="/js/theme.js"></script>
+          <script src="/js/jquery.flipshow.min.js"></script>
+          <script src="/js/view.home.js"></script>
+          <script src="/js/custom.js"></script>
+          <script src="/js/theme.init.js"></script>
         </body>
       </Html>
     );
