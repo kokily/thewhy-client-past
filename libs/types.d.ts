@@ -17,6 +17,10 @@ export interface NoticeType {
   updated_at?: string;
 }
 
+export interface MeType {
+  adminId: string;
+}
+
 export interface MenuProps {
   title: string;
   url: string;
