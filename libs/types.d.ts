@@ -8,6 +8,15 @@ export interface StoryType {
   updated_at?: string;
 }
 
+export interface NoticeType {
+  id: string;
+  num: number;
+  title: string;
+  body: string;
+  created_at: string;
+  updated_at?: string;
+}
+
 export interface MenuProps {
   title: string;
   url: string;
