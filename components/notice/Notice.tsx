@@ -1,13 +1,15 @@
 import React from 'react';
-import { NoticeType } from '../../libs/types';
+import { MeType, NoticeType } from '../../libs/types';
 import PageHeader from '../common/PageHeader';
 
 interface NoticeProps {
   notice: NoticeType[];
   lastPage: number;
+  me: MeType | null;
+  onWrite: () => void;
 }
 
-function Notice({ notice }: NoticeProps) {
+function Notice({ notice, lastPage, me, onWrite }: NoticeProps) {
   return (
     <>
       <PageHeader title={'공지사항'} />
@@ -41,6 +43,18 @@ function Notice({ notice }: NoticeProps) {
               )}
             </tbody>
           </table>
+
+          {me && (
+            <button
+              onClick={onWrite}
+              className="btn btn-outline btn-rounded btn-primary btn-with-arrow mb-2"
+            >
+              작 성
+              <span>
+                <i className="fas fa-chevron-left" />
+              </span>
+            </button>
+          )}
         </div>
       </div>
     </>
