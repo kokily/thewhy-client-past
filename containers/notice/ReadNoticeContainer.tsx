@@ -32,11 +32,22 @@ function ReadNoticeContainer() {
     }
   };
 
+  const onUpdate = () => {
+    router.push(`/notice/edit/${id}`);
+  };
+
   if (loading) return null;
   if (meLoading) return null;
   if (error) return null;
 
-  return <ReadNotice notice={data?.ReadNotice.notice} me={me?.Me.me} onRemove={onRemove} />;
+  return (
+    <ReadNotice
+      notice={data?.ReadNotice.notice}
+      me={me?.Me.me}
+      onRemove={onRemove}
+      onUpdate={onUpdate}
+    />
+  );
 }
 
 export default ReadNoticeContainer;

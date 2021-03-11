@@ -8,9 +8,10 @@ interface ReadNoticeProps {
   notice: NoticeType;
   me: MeType | null;
   onRemove: () => void;
+  onUpdate: () => void;
 }
 
-function ReadNotice({ notice, me, onRemove }: ReadNoticeProps) {
+function ReadNotice({ notice, me, onRemove, onUpdate }: ReadNoticeProps) {
   const [modal, toggleModal] = useState(false);
 
   const onRemoveClick = () => {
@@ -40,7 +41,9 @@ function ReadNotice({ notice, me, onRemove }: ReadNoticeProps) {
               <button onClick={onRemoveClick} className="btn btn-outline btn-danger">
                 삭제
               </button>
-              <button className="btn btn-outline btn-info ml-2">수정</button>
+              <button onClick={onUpdate} className="btn btn-outline btn-info ml-2">
+                수정
+              </button>
             </div>
           </div>
         </div>

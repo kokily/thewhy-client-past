@@ -12,7 +12,7 @@ function PageHeader({ link, title }: PageHeaderProps) {
       <div className="container">
         <div className="row">
           {link && (
-            <div className="col-md-12 align-self-center p-static order-2 text-center mb-1">
+            <div className="col-md-12 align-self-center p-static order-2 text-center mb-1 text-4">
               <ul className="breadcrumb d-block text-center">
                 <li>
                   <Link href={'/notice'}>
