@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import oc from 'open-color';
+import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 
 interface WriteLayoutProps {
   header: React.ReactNode;
@@ -27,14 +28,19 @@ function WriteLayout({
 
       <WriteBox>
         {header}
+
         <div className="areas">
-          <div className="area preview" style={leftLand}>
-            {preview}
-          </div>
-          <div className="divide" style={divideLand} onMouseDown={onDivideMouseDown} />
-          <div className="area content" style={rightLand}>
-            {content}
-          </div>
+          <ScrollSync>
+            <>
+              <div className="area preview" style={leftLand}>
+                <ScrollSyncPane group="a">{preview}</ScrollSyncPane>
+              </div>
+              <div className="divide" style={divideLand} onMouseDown={onDivideMouseDown} />
+              <div className="area content" style={rightLand}>
+                <ScrollSyncPane group="a">{content}</ScrollSyncPane>
+              </div>
+            </>
+          </ScrollSync>
         </div>
       </WriteBox>
     </>
@@ -60,7 +66,7 @@ const WriteGlobal = createGlobalStyle`
 
 const WriteBox = styled.div`
   .areas {
-    height: calc(100vh - 4rem);
+    min-height: calc(100vh - 4rem);
     display: flex;
     position: relative;
 

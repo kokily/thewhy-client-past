@@ -1,7 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { ScrollSync } from 'react-scroll-sync';
 import { READ_NOTICE } from '../../libs/graphql/notice';
 import { NoticeType } from '../../libs/types';
 import WriteLayout from '../../components/notice/WriteLayout';
@@ -41,14 +40,6 @@ function WriteNoticeTemplate({ edit }: WriteNoticeTemplateProps) {
     window.addEventListener('mouseup', onMouseUp);
   };
 
-  const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
-  };
-
-  const onChangeBody = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setBody(e.target.value);
-  };
-
   useEffect(() => {
     if (data?.ReadNotice.notice) {
       setTitle(data?.ReadNotice.notice.title);
@@ -59,28 +50,26 @@ function WriteNoticeTemplate({ edit }: WriteNoticeTemplateProps) {
   if (loading) return null;
 
   return (
-    <ScrollSync>
-      <WriteLayout
-        header={
-          <WriteHeaderContainer
-            noticeId={id}
-            title={title}
-            body={body}
-            setBody={setBody}
-            edit={edit}
-            notice={null}
-          />
-        }
-        preview={<WritePreviewContainer title={title} body={body} />}
-        content={
-          <WriteContentContainer title={title} body={body} setTitle={setTitle} setBody={setBody} />
-        }
-        leftLand={leftLand}
-        divideLand={divideLand}
-        rightLand={rightLand}
-        onDivideMouseDown={onDivideMouseDown}
-      />
-    </ScrollSync>
+    <WriteLayout
+      header={
+        <WriteHeaderContainer
+          noticeId={id}
+          title={title}
+          body={body}
+          setBody={setBody}
+          edit={edit}
+          notice={null}
+        />
+      }
+      preview={<WritePreviewContainer title={title} body={body} />}
+      content={
+        <WriteContentContainer title={title} body={body} setTitle={setTitle} setBody={setBody} />
+      }
+      leftLand={leftLand}
+      divideLand={divideLand}
+      rightLand={rightLand}
+      onDivideMouseDown={onDivideMouseDown}
+    />
   );
 }
 

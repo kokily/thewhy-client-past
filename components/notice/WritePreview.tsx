@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
-import { ScrollSyncPane } from 'react-scroll-sync';
 import MarkdownRender from '../common/MarkdownRender';
 
 interface WritePreviewProps {
@@ -11,14 +10,12 @@ interface WritePreviewProps {
 
 function WritePreview({ title, body }: WritePreviewProps) {
   return (
-    <ScrollSyncPane>
-      <PreviewBox>
-        <h1 className="title">{title}</h1>
-        <div className="content">
-          <MarkdownRender markdown={body} />
-        </div>
-      </PreviewBox>
-    </ScrollSyncPane>
+    <PreviewBox>
+      <h1 className="title">{title}</h1>
+      <div className="content">
+        <MarkdownRender markdown={body} />
+      </div>
+    </PreviewBox>
   );
 }
 

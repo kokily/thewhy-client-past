@@ -1,22 +1,48 @@
 import React from 'react';
 import { MeType, NoticeType } from '../../libs/types';
 import PageHeader from '../common/PageHeader';
+import Search from '../common/Search';
+import Pagination from './Pagination';
 
 interface NoticeProps {
   notice: NoticeType[];
   lastPage: number;
+  page: number;
   me: MeType | null;
+  onRead: (id: string) => void;
   onWrite: () => void;
+  title: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearch: (e: React.MouseEvent) => void;
+  onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-function Notice({ notice, lastPage, me, onWrite }: NoticeProps) {
+function Notice({
+  notice,
+  lastPage,
+  page,
+  me,
+  onRead,
+  onWrite,
+  title,
+  onChange,
+  onSearch,
+  onKeyPress,
+}: NoticeProps) {
   return (
     <>
       <PageHeader title={'공지사항'} />
 
       <div className="container py-2 mb-5">
         <div className="row" style={{ justifyContent: 'flex-end' }}>
-          {/* Search */}
+          <Search
+            mode={'제목'}
+            search={title}
+            onChange={onChange}
+            onSearch={onSearch}
+            onKeyPress={onKeyPress}
+          />
+
           <table className="table table-hover mt-2" style={{ cursor: 'pointer' }}>
             <thead>
               <tr style={{ textAlign: 'center' }}>
@@ -28,10 +54,12 @@ function Notice({ notice, lastPage, me, onWrite }: NoticeProps) {
             <tbody>
               {notice && notice.length > 0 ? (
                 notice.map((data) => (
-                  <tr key={data.id}>
+                  <tr key={data.id} onClick={() => onRead(data.id)}>
                     <td style={{ textAlign: 'center' }}>{data.num}</td>
                     <td>{data.title}</td>
-                    <td>{data.created_at}</td>
+                    <td style={{ textAlign: 'center' }}>
+                      {new Date(data.created_at).toLocaleDateString()}
+                    </td>
                   </tr>
                 ))
               ) : (
@@ -43,7 +71,14 @@ function Notice({ notice, lastPage, me, onWrite }: NoticeProps) {
               )}
             </tbody>
           </table>
+        </div>
 
+        <div className="row justify-content-center">
+          {/* title 은 현재 검색된 단어 */}
+          <Pagination title="" page={page} lastPage={lastPage} />
+        </div>
+
+        <div className="row justify-content-end">
           {me && (
             <button
               onClick={onWrite}
