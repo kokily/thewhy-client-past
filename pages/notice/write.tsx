@@ -1,7 +1,11 @@
 import React from 'react';
+import WriteNoticeTemplate from '../../containers/notice/WriteNoticeTemplate';
+import useAdmin from '../../libs/hooks/useAdmin';
 
 function WriteNoticePage() {
-  return <div>WriteNoticePage</div>;
+  useAdmin();
+
+  return <WriteNoticeTemplate />;
 }
 
 export default WriteNoticePage;
