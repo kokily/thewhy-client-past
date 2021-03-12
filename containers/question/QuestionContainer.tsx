@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import Question from '../../components/question/Question';
 import { LIST_QUESTIONS } from '../../libs/graphql/questions';
 import { ME } from '../../libs/graphql/auth';
 import { MeType, QuestionType } from '../../libs/types';
+import Question from '../../components/question/Question';
 
 function QuestionContainer() {
   const router = useRouter();

@@ -95,3 +95,48 @@ export const ADD_QUESTION = gql`
     }
   }
 `;
+
+/**
+ * Remove Question
+ * @param {
+ *  id: ID!
+ *  password: String!
+ * }
+ * @returns {
+ *  ok: Boolean!
+ *  error: String
+ * }
+ */
+export const REMOVE_QUESTION = gql`
+  mutation RemoveQuestion($id: ID!, $password: String!) {
+    RemoveQuestion(id: $id, password: $password) {
+      ok
+      error
+    }
+  }
+`;
+
+/**
+ * Update Question
+ * @param {
+ *  id: ID!
+ *  password: String!
+ *  name: String
+ *  phone: String
+ *  email: String
+ *  title: String
+ *  body: String
+ * }
+ * @returns {
+ *  ok: Boolean!
+ *  error: String
+ * }
+ */
+export const UPDATE_QUESTION = gql`
+  mutation UpdateQuestion($id: ID!, $password: String!, $name: String, $phone: String, $email: String, $title: String, $body: String) {
+    UpdateQuestion(id: $id, password, $password, name: $name, phone: $phone, email: $email, title: $title, body: $body) {
+      ok
+      error
+    }
+  }
+`;
