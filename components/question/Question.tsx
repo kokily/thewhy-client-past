@@ -1,71 +1,75 @@
 import React from 'react';
-import { MeType, NoticeType } from '../../libs/types';
+import { MeType, QuestionType } from '../../libs/types';
 import PageHeader from '../common/PageHeader';
 import Search from '../common/Search';
-import Pagination from './Pagination';
+import Pagination from '../notice/Pagination';
 
-interface NoticeProps {
-  notice: NoticeType[];
+interface QuestionProps {
+  questions: QuestionType[];
   lastPage: number;
   page: number;
   me: MeType | null;
   onRead: (id: string) => void;
-  onWrite: () => void;
+  onAdd: () => void;
+  search: string;
   title: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: (e: React.MouseEvent) => void;
   onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-function Notice({
-  notice,
+function Question({
+  questions,
   lastPage,
   page,
   me,
   onRead,
-  onWrite,
+  onAdd,
+  search,
   title,
   onChange,
   onSearch,
   onKeyPress,
-}: NoticeProps) {
+}: QuestionProps) {
   return (
     <>
-      <PageHeader title={'공지사항'} />
+      <PageHeader title={'교육문의'} />
 
       <div className="container py-2 mb-5">
         <div className="row" style={{ justifyContent: 'flex-end' }}>
           <Search
             mode={'제목'}
-            search={title}
+            search={search}
             onChange={onChange}
             onSearch={onSearch}
             onKeyPress={onKeyPress}
           />
 
-          <table className="table table-hover mt-2" style={{ cursor: 'pointer' }}>
+          <table className="table table-hver mt-2" style={{ cursor: 'pointer' }}>
             <thead>
               <tr style={{ textAlign: 'center' }}>
-                <th>No.</th>
+                <th>등록날짜</th>
                 <th>제목</th>
-                <th>작성일</th>
+                <th>질문자</th>
               </tr>
             </thead>
             <tbody>
-              {notice && notice.length > 0 ? (
-                notice.map((data) => (
-                  <tr key={data.id} onClick={() => onRead(data.id)}>
-                    <td style={{ textAlign: 'center' }}>{data.num}</td>
-                    <td>{data.title}</td>
-                    <td style={{ textAlign: 'center' }}>
-                      {new Date(data.created_at).toLocaleDateString()}
-                    </td>
-                  </tr>
-                ))
+              {questions && questions.length > 0 ? (
+                <>
+                  {questions.map((data) => (
+                    <tr key={data.id} onClick={() => onRead(data.id)}>
+                      <td style={{ textAlign: 'center' }}>
+                        {new Date(data.created_at).toLocaleDateString()}
+                      </td>
+                      <td>{data.title}</td>
+                      <td style={{ textAlign: 'center' }}>{data.name}님</td>
+                    </tr>
+                  ))}
+                </>
               ) : (
                 <tr>
-                  <td style={{ textAlign: 'center' }} colSpan={3}>
-                    작성된 공지사항이 없습니다.
+                  <td style={{ textAlign: 'center' }} colSpan={4}>
+                    작성된 문의 글이 없습니다.
                   </td>
                 </tr>
               )}
@@ -80,7 +84,7 @@ function Notice({
         <div className="row justify-content-end">
           {me && (
             <button
-              onClick={onWrite}
+              onClick={onAdd}
               className="btn btn-outline btn-rounded btn-primary btn-with-arrow mb-2"
             >
               작 성
@@ -95,4 +99,4 @@ function Notice({
   );
 }
 
-export default Notice;
+export default Question;

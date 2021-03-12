@@ -17,6 +17,19 @@ export interface NoticeType {
   updated_at?: string;
 }
 
+export interface QuestionType {
+  id: string;
+  name: string;
+  phone?: string;
+  email?: string;
+  isReply: boolean;
+  title: string;
+  body: string;
+  replyId?: string;
+  created_at: string;
+  updated_at?: string;
+}
+
 export interface MeType {
   adminId: string;
 }
