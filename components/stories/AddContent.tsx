@@ -15,14 +15,15 @@ if (typeof window !== 'undefined') {
   require('codemirror/mode/shell/shell');
 }
 
-interface WriteContentProps {
+interface AddContentProps {
   title: string;
   body: string;
   onChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeBody: React.Dispatch<React.SetStateAction<string>>;
+  children: React.ReactNode;
 }
 
-function WriteContent({ title, body, onChangeTitle, onChangeBody }: WriteContentProps) {
+function AddContent({ title, body, onChangeTitle, onChangeBody, children }: AddContentProps) {
   const editor = useRef(null);
   const textPane = useRef(null);
   const options = {
@@ -58,12 +59,14 @@ function WriteContent({ title, body, onChangeTitle, onChangeBody }: WriteContent
         onChange={onChangeTitle}
         placeholder="제목 입력"
       />
+
       <div className="code-editor" ref={editor} />
+      {children}
     </EditorBox>
   );
 }
 
-export default WriteContent;
+export default AddContent;
 
 // Styles
 const EditorBox = styled.div`
@@ -86,7 +89,7 @@ const EditorBox = styled.div`
   }
   .code-editor {
     flex: 1;
-    background: ${oc.gray[1]};
+    background: ${oc.gray[9]};
     display: flex;
     flex-direction: column;
     .CodeMirror {

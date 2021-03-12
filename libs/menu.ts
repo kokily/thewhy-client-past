@@ -38,7 +38,7 @@ const NavMenu = [
     url: '/notice',
     items: [
       { id: 0, subTitle: '공지사항', subUrl: '/notice' },
-      { id: 1, subTitle: '교육문의', subUrl: '/qna' },
+      { id: 1, subTitle: '교육문의', subUrl: '/question' },
     ],
   },
 ];

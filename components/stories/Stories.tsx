@@ -1,5 +1,6 @@
 import React from 'react';
-import { StoryType } from '../../libs/types';
+import Link from 'next/link';
+import { MeType, StoryType } from '../../libs/types';
 import Search from '../common/Search';
 import StoryCard from './StoryCard';
 
@@ -9,9 +10,10 @@ interface StoriesProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: (e: React.MouseEvent) => void;
   onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  me: MeType | null;
 }
 
-function Stories({ stories, search, onChange, onSearch, onKeyPress }: StoriesProps) {
+function Stories({ stories, search, onChange, onSearch, onKeyPress, me }: StoriesProps) {
   return (
     <>
       <div className="container py-2 pb-4">
@@ -24,22 +26,39 @@ function Stories({ stories, search, onChange, onSearch, onKeyPress }: StoriesPro
         />
       </div>
 
-      <div className="container py-2">
-        <div className="row">
-          {stories && stories.length > 0 && (
-            <>
-              {stories.map((story) => (
-                <StoryCard
-                  key={story.id}
-                  id={story.id}
-                  title={story.title}
-                  thumbnail={story.thumbnail}
-                  date={story.created_at}
-                />
-              ))}
-            </>
-          )}
+      {me && (
+        <div className="container py-2">
+          <div className="row justify-content-center">
+            <Link href={`/stories/add`}>
+              <a className="btn btn-outline btn-rounded btn-primary btn-with-arrow mb-2">
+                스토리 작성
+                <span>
+                  <i className="fas fa-chevron-right" />
+                </span>
+              </a>
+            </Link>
+          </div>
         </div>
+      )}
+
+      <div className="container py-2">
+        {stories && stories.length > 0 ? (
+          <div className="row">
+            {stories.map((story) => (
+              <StoryCard
+                key={story.id}
+                id={story.id}
+                title={story.title}
+                thumbnail={story.thumbnail}
+                date={story.created_at}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="row justify-content-center mb-2">
+            <h5>아직 작성된 스토리가 없습니다.</h5>
+          </div>
+        )}
       </div>
     </>
   );

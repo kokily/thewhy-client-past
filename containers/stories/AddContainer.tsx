@@ -1,25 +1,27 @@
-import React, { useEffect, useReducer, useState } from 'react';
-import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { READ_NOTICE } from '../../libs/graphql/notice';
-import { NoticeType } from '../../libs/types';
+import { useRouter } from 'next/router';
+import { READ_STORY } from '../../libs/graphql/stories';
+import { StoryType } from '../../libs/types';
 import WriteLayout from '../../components/common/WriteLayout';
-import WriteHeaderContainer from './WriteHeaderContainer';
-import WritePreviewContainer from './WritePreviewContainer';
-import WriteContentContainer from './WriteContentContainer';
+import AddHeaderContainer from './AddHeaderContainer';
+import AddPreview from '../../components/stories/AddPreview';
+import AddContentContainer from './AddContentContainer';
 
-interface WriteNoticeTemplateProps {
+interface EditProps {
   edit?: boolean;
 }
 
-function WriteNoticeTemplate({ edit }: WriteNoticeTemplateProps) {
+function AddContainer({ edit }: EditProps) {
   const router = useRouter();
   const { id }: { id?: string } = router.query;
-  const { data, loading } = useQuery<{ ReadNotice: { notice: NoticeType | null } }>(READ_NOTICE, {
+  const { data, loading } = useQuery<{ ReadStory: { story: StoryType | null } }>(READ_STORY, {
     variables: { id },
   });
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [thumbnail, setThumbnail] = useState('');
+  const [tags, setTags] = useState<string[]>([]);
   const [leftRatio, setLeftRatio] = useState(0.5);
   const leftLand = { flex: leftRatio };
   const divideLand = { left: `${leftRatio * 100}` };
@@ -41,9 +43,11 @@ function WriteNoticeTemplate({ edit }: WriteNoticeTemplateProps) {
   };
 
   useEffect(() => {
-    if (data?.ReadNotice.notice) {
-      setTitle(data?.ReadNotice.notice.title);
-      setBody(data?.ReadNotice.notice.body);
+    if (data?.ReadStory.story) {
+      setTitle(data.ReadStory.story.title);
+      setBody(data.ReadStory.story.body);
+      setThumbnail(data.ReadStory.story.thumbnail);
+      setTags(data.ReadStory.story.tags);
     }
   }, [edit, data]);
 
@@ -52,18 +56,28 @@ function WriteNoticeTemplate({ edit }: WriteNoticeTemplateProps) {
   return (
     <WriteLayout
       header={
-        <WriteHeaderContainer
-          noticeId={id}
+        <AddHeaderContainer
+          storyId={id}
           title={title}
           body={body}
+          thumbnail={thumbnail}
+          tags={tags}
+          setThumbnail={setThumbnail}
           setBody={setBody}
           edit={edit}
-          notice={null}
+          story={null}
         />
       }
-      preview={<WritePreviewContainer title={title} body={body} />}
+      preview={<AddPreview title={title} body={body} thumbnail={thumbnail} tags={tags} />}
       content={
-        <WriteContentContainer title={title} body={body} setTitle={setTitle} setBody={setBody} />
+        <AddContentContainer
+          title={title}
+          body={body}
+          tags={tags}
+          setTitle={setTitle}
+          setBody={setBody}
+          setTags={setTags}
+        />
       }
       leftLand={leftLand}
       divideLand={divideLand}
@@ -73,4 +87,4 @@ function WriteNoticeTemplate({ edit }: WriteNoticeTemplateProps) {
   );
 }
 
-export default WriteNoticeTemplate;
+export default AddContainer;
