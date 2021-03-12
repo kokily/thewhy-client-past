@@ -45,12 +45,13 @@ function Question({
             onKeyPress={onKeyPress}
           />
 
-          <table className="table table-hver mt-2" style={{ cursor: 'pointer' }}>
+          <table className="table table-hover mt-2" style={{ cursor: 'pointer' }}>
             <thead>
               <tr style={{ textAlign: 'center' }}>
                 <th>등록날짜</th>
                 <th>제목</th>
                 <th>질문자</th>
+                <th>답변</th>
               </tr>
             </thead>
             <tbody>
@@ -61,8 +62,21 @@ function Question({
                       <td style={{ textAlign: 'center' }}>
                         {new Date(data.created_at).toLocaleDateString()}
                       </td>
-                      <td>{data.title}</td>
+                      <td>
+                        {data.isReply ? (
+                          <strong style={{ color: 'blue' }}>{data.title}</strong>
+                        ) : (
+                          <span style={{ color: 'red' }}>{data.title}</span>
+                        )}
+                      </td>
                       <td style={{ textAlign: 'center' }}>{data.name}님</td>
+                      <td style={{ textAlign: 'center' }}>
+                        {data.isReply ? (
+                          <strong style={{ color: 'blue' }}>완료</strong>
+                        ) : (
+                          <span style={{ color: 'red' }}>미진행</span>
+                        )}
+                      </td>
                     </tr>
                   ))}
                 </>
