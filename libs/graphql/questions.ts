@@ -62,7 +62,6 @@ export const READ_QUESTION = gql`
         title
         body
         replyId
-        reply
         created_at
         updated_at
       }
@@ -133,8 +132,24 @@ export const REMOVE_QUESTION = gql`
  * }
  */
 export const UPDATE_QUESTION = gql`
-  mutation UpdateQuestion($id: ID!, $password: String!, $name: String, $phone: String, $email: String, $title: String, $body: String) {
-    UpdateQuestion(id: $id, password, $password, name: $name, phone: $phone, email: $email, title: $title, body: $body) {
+  mutation UpdateQuestion(
+    $id: ID!
+    $password: String!
+    $name: String
+    $phone: String
+    $email: String
+    $title: String
+    $body: String
+  ) {
+    UpdateQuestion(
+      id: $id
+      password: $password
+      name: $name
+      phone: $phone
+      email: $email
+      title: $title
+      body: $body
+    ) {
       ok
       error
     }

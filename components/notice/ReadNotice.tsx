@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MeType, NoticeType } from '../../libs/types';
 import MarkdownRender from '../common/MarkdownRender';
 import PageHeader from '../common/PageHeader';
-import RemoveModal from './RemoveModal';
+import RemoveModal from '../common/RemoveModal';
 
 interface ReadNoticeProps {
   notice: NoticeType;
@@ -32,7 +32,7 @@ function ReadNotice({ notice, me, onRemove, onUpdate }: ReadNoticeProps) {
 
   return (
     <>
-      <PageHeader link={notice.title} title={notice.title} />
+      <PageHeader link={notice.title} linkTitle={'공지사항'} title={notice.title} />
 
       {me && (
         <div className="container py-2">

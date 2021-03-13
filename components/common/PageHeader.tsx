@@ -3,10 +3,11 @@ import Link from 'next/link';
 
 interface PageHeaderProps {
   link?: string;
+  linkTitle?: string;
   title: string;
 }
 
-function PageHeader({ link, title }: PageHeaderProps) {
+function PageHeader({ link, linkTitle, title }: PageHeaderProps) {
   return (
     <section className="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
       <div className="container">
@@ -15,12 +16,22 @@ function PageHeader({ link, title }: PageHeaderProps) {
             <div className="col-md-12 align-self-center p-static order-2 text-center mb-1 text-4">
               <ul className="breadcrumb d-block text-center">
                 <li>
-                  <Link href={'/notice'}>
-                    <a>공지사항</a>
+                  <Link href={link}>
+                    <a>{linkTitle}</a>
                   </Link>
                 </li>
                 <li>
                   <a>{title}</a>
+                </li>
+              </ul>
+            </div>
+          )}
+
+          {!link && linkTitle && (
+            <div className="col-md-12 align-self-center p-static order-2 text-center mb-1 text-4">
+              <ul className="breadcrumb d-block text-center">
+                <li>
+                  <a>{linkTitle}</a>
                 </li>
               </ul>
             </div>

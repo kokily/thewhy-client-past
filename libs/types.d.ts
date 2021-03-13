@@ -26,6 +26,7 @@ export interface QuestionType {
   title: string;
   body: string;
   replyId?: string;
+  reply?: Reply;
   created_at: string;
   updated_at?: string;
 }
