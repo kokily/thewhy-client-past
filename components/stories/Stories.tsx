@@ -41,7 +41,7 @@ function Stories({ stories, search, onChange, onSearch, onKeyPress, me }: Storie
         </div>
       )}
 
-      <div className="container py-2">
+      <div className="container py-2 mb-5">
         {stories && stories.length > 0 ? (
           <div className="row">
             {stories.map((story) => (

@@ -10,11 +10,7 @@ interface StoryCardProps {
 
 function StoryCard({ id, title, thumbnail, date }: StoryCardProps) {
   return (
-    <div
-      className="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation"
-      data-appear-animation="fadeInUpShorter"
-      data-appear-animation-delay="200"
-    >
+    <div className="col-md-6 col-lg-4 mb-5 mb-lg-0">
       <div className="card" style={{ height: '100%' }}>
         <img className="card-img-top" src={thumbnail} alt="Card Image" />
         <div className="card-body">
@@ -23,7 +19,7 @@ function StoryCard({ id, title, thumbnail, date }: StoryCardProps) {
               <a className="text-decoration-none">{title}</a>
             </Link>
           </h4>
-          <span className="read-more">{date}</span>
+          <span className="read-more">{new Date(date).toLocaleDateString()}</span>
         </div>
       </div>
     </div>
