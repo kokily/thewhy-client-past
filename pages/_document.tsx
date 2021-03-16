@@ -37,9 +37,12 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-          <meta name="keywords" content="커뮤니케이션, 교육, 강의" />
-          <meta name="description" content="Community, Education, edu" />
+          <meta name="keywords" content="커뮤니케이션, 교육, 강의, 더와이컴퍼니, 더와이" />
+          <meta name="description" content="Community, Education, edu, the why, the why company" />
           <meta name="author" content="thewhy.kr" />
+
+          <link rel="shortcut icon" href="/img/favicon.ico" type="iamge/x-icon" />
+          <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
 
           <link
             id="googleFonts"

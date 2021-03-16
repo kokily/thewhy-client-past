@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import useKakaoMap from '../../../libs/hooks/useKakaoMap';
+import NaverIcon from '../NaverIcon';
 import FooterMap from './FooterMap';
 
 function FooterContent() {
@@ -24,14 +24,12 @@ function FooterContent() {
       </ul>
       <ul className="footer-social-icons social-icons mt-4" style={{ transition: '0.3s all' }}>
         <li className="social-icons-youtube mr-1">
-          <a href="/">
+          <a href="https://www.youtube.com/channel/UCggECPaCiuurAttkyNdWWDg/featured">
             <i className="fab fa-youtube text-2" />
           </a>
         </li>
         <li className="naver">
-          <NaverLink href="/">
-            <span />
-          </NaverLink>
+          <NaverIcon href="https://blog.naver.com/thewhycompany" />
         </li>
       </ul>
     </div>
@@ -58,28 +56,28 @@ function FooterContent() {
           <ul className="list list-icons list-icons-sm mb-0">
             <li>
               <i className="fas fa-angle-right top-8" />
-              <a href="/" className="link-hover-style-1">
+              <a href="/question" className="link-hover-style-1">
                 교육문의
               </a>
             </li>
 
             <li>
               <i className="fas fa-angle-right top-8" />
-              <a href="/" className="link-hover-style-1">
+              <a href="/education" className="link-hover-style-1">
                 교육 프로그램
               </a>
             </li>
 
             <li>
               <i className="fas fa-angle-right top-8" />
-              <a href="/" className="link-hover-style-1">
+              <a href="/online" className="link-hover-style-1">
                 온라인 프로그램
               </a>
             </li>
 
             <li>
               <i className="fas fa-angle-right top-8" />
-              <a href="/" className="link-hover-style-1">
+              <a href="/stories" className="link-hover-style-1">
                 The Y 이야기
               </a>
             </li>
@@ -112,20 +110,3 @@ function FooterContent() {
 }
 
 export default FooterContent;
-
-// Styles
-const NaverLink = styled.a`
-  &:hover {
-    background: #62c15b!important;
-  }
-  span:before {
-    font-family: sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    content: 'N';
-    color: #62c15b;
-  }
-  &:hover span:before {
-    color: white;
-  }
-`;
