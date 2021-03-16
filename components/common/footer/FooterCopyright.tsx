@@ -7,7 +7,7 @@ function FooterCopyright() {
         <div className="row py-4">
           <div className="col-lg-1 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
             <a href="/" className="logo pr-0 pr-lg-3">
-              <img src="/img/logo-footer.png" className="opacity-5" height="32" />
+              <img src="/img/logo2.png" className="opacity-5" height="32" />
             </a>
           </div>
 

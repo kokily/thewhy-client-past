@@ -96,17 +96,15 @@ function Question({
         </div>
 
         <div className="row justify-content-end">
-          {me && (
-            <button
-              onClick={onAdd}
-              className="btn btn-outline btn-rounded btn-primary btn-with-arrow mb-2"
-            >
-              작 성
-              <span>
-                <i className="fas fa-chevron-left" />
-              </span>
-            </button>
-          )}
+          <button
+            onClick={onAdd}
+            className="btn btn-outline btn-rounded btn-primary btn-with-arrow mb-2"
+          >
+            작 성
+            <span>
+              <i className="fas fa-chevron-left" />
+            </span>
+          </button>
         </div>
       </div>
     </>

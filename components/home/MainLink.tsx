@@ -42,7 +42,7 @@ function MainLink() {
 
         <div className="row pb-4 mb-2">
           <Card
-            url="/community/question"
+            url="/question"
             img="/img/main_link1.png"
             title="교육문의"
             sub="050-5055-7221"

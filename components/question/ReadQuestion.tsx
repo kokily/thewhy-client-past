@@ -148,7 +148,7 @@ function ReadQuestion({
           <div className="row justify-content-center mb-4">
             <div className="col-md-8">
               <h4>답 글</h4>
-              <pre>{question.reply}</pre>
+              <pre>{question.reply.body}</pre>
             </div>
           </div>
         )}

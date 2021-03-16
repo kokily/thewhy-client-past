@@ -26,11 +26,11 @@ function HeaderTop() {
           <a href="/">
             <img
               alt="Porto"
-              width="100"
-              height="48"
-              data-sticky-width="82"
-              data-sticky-height="40"
-              src="/img/logo-default-slim.png"
+              width="220"
+              height="96"
+              data-sticky-width="220"
+              data-sticky-height="82"
+              src="/img/logo1.png"
             />
           </a>
         </div>
@@ -49,7 +49,7 @@ function HeaderTop() {
               </div>
               <div className="feature-box-info">
                 <p className="pb-0 font-weight-semibold line-height-5 text-2">
-                  (050) 5055-7221
+                  050-5055-7221
                   <br />
                   thewhycompany@naver.com
                 </p>

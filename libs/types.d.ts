@@ -25,8 +25,16 @@ export interface QuestionType {
   isReply: boolean;
   title: string;
   body: string;
-  replyId?: string;
-  reply?: Reply;
+  replyId: string;
+  reply: ReplyType;
+  created_at: string;
+  updated_at?: string;
+}
+
+export interface ReplyType {
+  id: string;
+  body: string;
+  questionId: string;
   created_at: string;
   updated_at?: string;
 }

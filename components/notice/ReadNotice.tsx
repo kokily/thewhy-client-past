@@ -32,7 +32,7 @@ function ReadNotice({ notice, me, onRemove, onUpdate }: ReadNoticeProps) {
 
   return (
     <>
-      <PageHeader link={notice.title} linkTitle={'공지사항'} title={notice.title} />
+      <PageHeader link={'/notice'} linkTitle={'공지사항'} title={notice.title} />
 
       {me && (
         <div className="container py-2">

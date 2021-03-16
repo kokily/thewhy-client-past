@@ -9,8 +9,8 @@ function FooterContent() {
   const ContactUs = (
     <div className="col-md-3 mb-4 mb-lg-0">
       <h5 className="text-3 mb-3 pb-1">Contact Us</h5>
-      <p className="text-8 text-color-light font-weight-bold">(050) 5055-7221</p>
-      <p className="mb-2">Tel: (050) 5055-7221</p>
+      <p className="text-8 text-color-light font-weight-bold">050-5055-7221</p>
+      <p className="mb-2">Tel: 050-5055-7221</p>
       <p className="mb-2">Fax: (0504) </p>
       <ul className="list list-icons list-icons-lg">
         <li className="mb-1">
@@ -28,7 +28,7 @@ function FooterContent() {
             <i className="fab fa-youtube text-2" />
           </a>
         </li>
-        <li className="social-icons-naver">
+        <li className="naver">
           <NaverLink href="/">
             <span />
           </NaverLink>
@@ -115,6 +115,9 @@ export default FooterContent;
 
 // Styles
 const NaverLink = styled.a`
+  &:hover {
+    background: #62c15b!important;
+  }
   span:before {
     font-family: sans-serif;
     font-size: 11px;

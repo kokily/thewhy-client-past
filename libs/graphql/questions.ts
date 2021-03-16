@@ -62,6 +62,10 @@ export const READ_QUESTION = gql`
         title
         body
         replyId
+        reply {
+          id
+          body
+        }
         created_at
         updated_at
       }
