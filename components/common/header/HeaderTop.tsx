@@ -37,9 +37,9 @@ function HeaderTop() {
           <a href="/">
             <img
               alt="Porto"
-              width="220"
+              width="200"
               height="96"
-              data-sticky-width="220"
+              data-sticky-width="200"
               data-sticky-height="82"
               src="/img/logo1.png"
             />
