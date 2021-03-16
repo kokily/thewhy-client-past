@@ -144,7 +144,7 @@ function ReadQuestion({
           </div>
         )}
 
-        {me && question.isReply && (
+        {question.isReply && (
           <div className="row justify-content-center mb-4">
             <div className="col-md-8">
               <h4>답 글</h4>
