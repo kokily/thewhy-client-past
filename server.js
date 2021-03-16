@@ -37,7 +37,7 @@ devApp.prepare().then(() => {
     server = https.createServer(
       {
         key: fs.readFileSync(`${process.env.SSL_KEY}`),
-        cert: fs.readFileSync(`${process.env.CERT_KEY}`),
+        cert: fs.readFileSync(`${process.env.SSL_CERT}`),
       },
       app.callback()
     );
