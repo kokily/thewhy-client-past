@@ -48,3 +48,15 @@ export interface MenuProps {
   url: string;
   items?: { id?: number; subTitle?: string; subUrl?: string }[];
 }
+
+export interface StateProps {
+  name: string;
+  email: string;
+  subject: string;
+  body: string;
+}
+
+export interface ActionProps {
+  name: string;
+  value: string;
+}

@@ -20,7 +20,7 @@ function FooterCopyright() {
               <ul>
                 <li>
                   <i className="fas fa-angle-right" />
-                  <a href="/qna" className="ml-1 text-decoration-none">
+                  <a href="/faq" className="ml-1 text-decoration-none">
                     {' '}
                     FAQ's
                   </a>
@@ -34,7 +34,7 @@ function FooterCopyright() {
                 </li>
                 <li>
                   <i className="fas fa-angle-right" />
-                  <a href="/about" className="ml-1 text-decoration-none">
+                  <a href="/contact" className="ml-1 text-decoration-none">
                     {' '}
                     Contact Us
                   </a>
