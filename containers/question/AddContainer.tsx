@@ -1,8 +1,9 @@
 import React, { useReducer, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useMutation } from '@apollo/client';
-import { ADD_QUESTION } from '../../libs/graphql/questions';
+import { useApolloClient, useMutation, useQuery } from '@apollo/client';
+import { ADD_QUESTION, READ_QUESTION, UPDATE_QUESTION } from '../../libs/graphql/questions';
 import AddQuestion from '../../components/question/AddQuestion';
+import { QuestionType } from '../../libs/types';
 
 interface StateProps {
   name: string;
@@ -24,19 +25,32 @@ function reducer(state: StateProps, action: ActionProps) {
   };
 }
 
-function AddContainer() {
+interface AddContainerProps {
+  edit?: boolean;
+}
+
+function AddContainer({ edit }: AddContainerProps) {
+  const client = useApolloClient();
   const router = useRouter();
+  const { id }: { id?: string } = router.query;
+  const [AddQuestionResolver] = useMutation(ADD_QUESTION);
+  const [UpdateQuestionResolver] = useMutation(UPDATE_QUESTION);
+  const { data, loading } = useQuery<{ ReadQuestion: { question: QuestionType | null } }>(
+    READ_QUESTION,
+    {
+      variables: { id },
+    }
+  );
   const [state, dispatch] = useReducer(reducer, {
-    name: '',
+    name: data?.ReadQuestion.question.name || '',
     password: '',
-    phone: '',
-    email: '',
-    title: '',
+    phone: data?.ReadQuestion.question.phone || '',
+    email: data?.ReadQuestion.question.email || '',
+    title: data?.ReadQuestion.question.title || '',
   });
   const { name, password, phone, email, title } = state;
-  const [body, setBody] = useState('');
+  const [body, setBody] = useState(data?.ReadQuestion.question.body || '');
   const [agree, setAgree] = useState(false);
-  const [AddQuestionResolver, { client }] = useMutation(ADD_QUESTION);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(e.target);
@@ -46,7 +60,7 @@ function AddContainer() {
     setBody(e.target.value);
   };
 
-  const onChangeAgree = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeAgree = () => {
     setAgree(!agree);
   };
 
@@ -64,26 +78,52 @@ function AddContainer() {
     }
 
     try {
-      const response = await AddQuestionResolver({
-        variables: {
-          name,
-          password,
-          phone,
-          email,
-          title,
-          body,
-        },
-      });
+      if (edit) {
+        const response = await UpdateQuestionResolver({
+          variables: {
+            id,
+            name,
+            password,
+            phone,
+            email,
+            title,
+            body,
+          },
+        });
 
-      if (!response || !response.data) return;
+        if (!response) return;
+        if (response.data.UpdateQuestion.error) {
+          alert(response.data.UpdateQuestion.error);
+          return;
+        } else {
+          await client.clearStore();
 
-      await client.clearStore();
+          router.back();
+        }
+      } else {
+        const response = await AddQuestionResolver({
+          variables: {
+            name,
+            password,
+            phone,
+            email,
+            title,
+            body,
+          },
+        });
 
-      router.push('/question');
+        if (!response || !response.data) return;
+
+        await client.clearStore();
+
+        router.push('/question');
+      }
     } catch (err) {
       alert(err);
     }
   };
+
+  if (loading) return null;
 
   return (
     <AddQuestion

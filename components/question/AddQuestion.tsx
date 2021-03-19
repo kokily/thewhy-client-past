@@ -11,7 +11,7 @@ interface AddQuestionProps {
   agree: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeBody: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  onChangeAgree: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeAgree: () => void;
   onSubmit: (e: React.MouseEvent) => void;
 }
 

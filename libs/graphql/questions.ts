@@ -159,3 +159,20 @@ export const UPDATE_QUESTION = gql`
     }
   }
 `;
+
+/**
+ * Valid Password
+ * @param {id: ID!, password: String!}
+ * @returns {
+ *  ok: Boolean!
+ *  error: String!
+ * }
+ */
+export const VALID_PASSWORD = gql`
+  mutation ValidPassword($id: ID!, $password: String!) {
+    ValidPassword(id: $id, password: $password) {
+      ok
+      error
+    }
+  }
+`;

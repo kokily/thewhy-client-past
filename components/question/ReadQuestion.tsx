@@ -13,6 +13,7 @@ interface ReadQuestionProps {
   onRemove: () => void;
   onAddReply: () => void;
   onRemoveReply: () => void;
+  isEdit: () => void;
 }
 
 function ReadQuestion({
@@ -25,6 +26,7 @@ function ReadQuestion({
   onRemove,
   onAddReply,
   onRemoveReply,
+  isEdit,
 }: ReadQuestionProps) {
   const [modal, setModal] = useState(false);
   const [replyModal, setReplyModal] = useState(false);
@@ -122,6 +124,17 @@ function ReadQuestion({
         <div className="row justify-content-center mb-4">
           <div className="col-md-8">
             <pre>{question.body}</pre>
+          </div>
+        </div>
+
+        <div className="row justify-content-center mb-2">
+          <div className="col text-center">
+            <button
+              className="btn btn-outline btn-rounded btn-warning btn-with-arrow mb-2"
+              onClick={isEdit}
+            >
+              문의 글 수정(password)
+            </button>
           </div>
         </div>
 

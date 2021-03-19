@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApolloClient, useMutation, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import { READ_QUESTION, REMOVE_QUESTION } from '../../libs/graphql/questions';
+import { READ_QUESTION, REMOVE_QUESTION, VALID_PASSWORD } from '../../libs/graphql/questions';
 import { MeType, QuestionType } from '../../libs/types';
 import { ME } from '../../libs/graphql/auth';
 import ReadQuestion from '../../components/question/ReadQuestion';
@@ -23,6 +23,7 @@ function ReadQuestionContainer() {
   const [RemoveQuestion] = useMutation(REMOVE_QUESTION);
   const [AddReply] = useMutation(ADD_REPLY);
   const [RemoveReply] = useMutation(REMOVE_REPLY);
+  const [ValidPassword] = useMutation(VALID_PASSWORD);
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setReply(e.target.value);
@@ -86,6 +87,26 @@ function ReadQuestionContainer() {
     }
   };
 
+  const isEdit = async () => {
+    const inputData = window.prompt('작성시 비밀번호를 입력해주세요');
+
+    try {
+      const response = await ValidPassword({
+        variables: { id, password: inputData },
+      });
+
+      if (!response) return;
+      if (response.data.ValidPassword.error) {
+        alert(response.data.ValidPassword.error);
+        return;
+      }
+
+      router.push(`/question/edit/${id}`);
+    } catch (err) {
+      alert(err);
+    }
+  };
+
   if (loading) return null;
   if (meLoading) return null;
   if (error) return null;
@@ -101,6 +122,7 @@ function ReadQuestionContainer() {
       onRemove={onRemove}
       onAddReply={onAddReply}
       onRemoveReply={onRemoveReply}
+      isEdit={isEdit}
     />
   );
 }
