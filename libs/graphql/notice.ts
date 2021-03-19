@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 /**
  * List Notice
- * @param {page: Int}
+ * @param {page: Int, title: String}
  * @returns {
  *  ok: Boolean
  *  error: String
@@ -11,8 +11,8 @@ import { gql } from '@apollo/client';
  * }
  */
 export const LIST_NOTICE = gql`
-  query ListNotice($page: Int) {
-    ListNotice(page: $page) {
+  query ListNotice($page: Int, $title: String) {
+    ListNotice(page: $page, title: $title) {
       ok
       error
       notice {

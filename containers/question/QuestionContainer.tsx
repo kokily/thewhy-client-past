@@ -9,27 +9,27 @@ import Question from '../../components/question/Question';
 function QuestionContainer() {
   const router = useRouter();
   const { page }: { page?: number } = router.query;
-  const { data, loading, error } = useQuery<{
-    ListQuestions: { questions: QuestionType[]; lastPage: number };
-  }>(LIST_QUESTIONS, {
-    variables: { page: page ? parseInt(page.toString()) : 1 },
-  });
-  const { data: me, loading: meLoading } = useQuery<{ Me: { me: MeType | null } }>(ME);
   const [search, setSearch] = useState('');
   const [title, setTitle] = useState('');
+  const { data, loading, error, refetch } = useQuery<{
+    ListQuestions: { questions: QuestionType[]; lastPage: number };
+  }>(LIST_QUESTIONS, {
+    variables: { page: page ? parseInt(page.toString()) : 1, title },
+  });
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
-  const onSearch = (e: React.MouseEvent) => {
+  const onSearch = async (e: React.MouseEvent) => {
     e.preventDefault();
 
     if (search === '') {
+      await refetch();
       return;
     } else {
       setTitle(search);
-      router.push(`/question?title=${search}`);
+      await refetch();
     }
   };
 
@@ -49,7 +49,6 @@ function QuestionContainer() {
   };
 
   if (loading) return null;
-  if (meLoading) return null;
   if (error) return null;
 
   return (
@@ -57,11 +56,9 @@ function QuestionContainer() {
       questions={data?.ListQuestions.questions}
       lastPage={data?.ListQuestions.lastPage}
       page={page ? page : 1}
-      me={me?.Me.me}
       onRead={onRead}
       onAdd={onAdd}
       search={search}
-      title={title}
       onChange={onChange}
       onSearch={onSearch}
       onKeyPress={onKeyPress}

@@ -22,6 +22,7 @@ function Search({ mode, search, onChange, onSearch, onKeyPress }: SearchProps) {
           name="search"
           value={search}
           onChange={onChange}
+          onKeyPress={onKeyPress}
           placeholder={`${mode} 검색`}
         />
         <span className="input-group-append">

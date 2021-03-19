@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 /**
  * List Questions
- * @param {page: Int}
+ * @param {page: Int, title: String}
  * @returns {
  *  ok: Boolean!
  *  error: String
@@ -11,8 +11,8 @@ import { gql } from '@apollo/client';
  * }
  */
 export const LIST_QUESTIONS = gql`
-  query ListQuestions($page: Int) {
-    ListQuestions(page: $page) {
+  query ListQuestions($page: Int, $title: String) {
+    ListQuestions(page: $page, title: $title) {
       ok
       error
       questions {

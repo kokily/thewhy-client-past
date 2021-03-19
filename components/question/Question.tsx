@@ -8,11 +8,9 @@ interface QuestionProps {
   questions: QuestionType[];
   lastPage: number;
   page: number;
-  me: MeType | null;
   onRead: (id: string) => void;
   onAdd: () => void;
   search: string;
-  title: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: (e: React.MouseEvent) => void;
   onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
@@ -22,11 +20,9 @@ function Question({
   questions,
   lastPage,
   page,
-  me,
   onRead,
   onAdd,
   search,
-  title,
   onChange,
   onSearch,
   onKeyPress,
@@ -92,7 +88,7 @@ function Question({
         </div>
 
         <div className="row justify-content-center">
-          <Pagination title={title} page={page} lastPage={lastPage} />
+          <Pagination title={search} page={page} lastPage={lastPage} />
         </div>
 
         <div className="row justify-content-end">

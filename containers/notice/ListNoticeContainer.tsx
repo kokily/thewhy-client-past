@@ -9,29 +9,31 @@ import { ME } from '../../libs/graphql/auth';
 function ListNoticeContainer() {
   const router = useRouter();
   const { page }: { page?: number } = router.query;
-  const { data, loading, error } = useQuery<{
+  const [search, setSearch] = useState('');
+  const [title, setTitle] = useState('');
+  const { data, loading, error, refetch } = useQuery<{
     ListNotice: { notice: NoticeType[]; lastPage: number };
   }>(LIST_NOTICE, {
     variables: {
       page: page ? parseInt(page.toString()) : 1,
+      title,
     },
   });
   const { data: me, loading: meLoading } = useQuery<{ Me: { me: MeType | null } }>(ME);
-  const [search, setSearch] = useState('');
-  const [title, setTitle] = useState('');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
-  const onSearch = (e: React.MouseEvent) => {
+  const onSearch = async (e: React.MouseEvent) => {
     e.preventDefault();
 
     if (search === '') {
+      await refetch();
       return;
     } else {
       setTitle(search);
-      router.push(`/notice?title=${title}`);
+      await refetch();
     }
   };
 
@@ -62,7 +64,7 @@ function ListNoticeContainer() {
       me={me?.Me.me}
       onRead={onRead}
       onWrite={onWrite}
-      title={title}
+      search={search}
       onChange={onChange}
       onSearch={onSearch}
       onKeyPress={onKeyPress}

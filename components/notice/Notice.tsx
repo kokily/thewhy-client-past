@@ -11,7 +11,7 @@ interface NoticeProps {
   me: MeType | null;
   onRead: (id: string) => void;
   onWrite: () => void;
-  title: string;
+  search: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: (e: React.MouseEvent) => void;
   onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
@@ -24,7 +24,7 @@ function Notice({
   me,
   onRead,
   onWrite,
-  title,
+  search,
   onChange,
   onSearch,
   onKeyPress,
@@ -37,7 +37,7 @@ function Notice({
         <div className="row" style={{ justifyContent: 'flex-end' }}>
           <Search
             mode={'제목'}
-            search={title}
+            search={search}
             onChange={onChange}
             onSearch={onSearch}
             onKeyPress={onKeyPress}
@@ -74,7 +74,7 @@ function Notice({
         </div>
 
         <div className="row justify-content-center">
-          <Pagination title={title} page={page} lastPage={lastPage} />
+          <Pagination title={search} page={page} lastPage={lastPage} />
         </div>
 
         <div className="row justify-content-end">
