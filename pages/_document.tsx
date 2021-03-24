@@ -38,7 +38,10 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
           <meta name="keywords" content="커뮤니케이션, 교육, 강의, 더와이컴퍼니, 더와이" />
-          <meta name="description" content="Community, Education, edu, the why, the why company" />
+          <meta
+            name="description"
+            content="Community, Education, edu, the why, the why company, 더와이컴퍼니, 더와이"
+          />
           <meta name="author" content="thewhy.kr" />
 
           <link rel="shortcut icon" href="/img/favicon.ico" type="iamge/x-icon" />
