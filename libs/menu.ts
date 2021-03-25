@@ -6,6 +6,7 @@ const NavMenu = [
     items: [
       { id: 0, subTitle: 'Why The Y', subUrl: '/about' },
       { id: 1, subTitle: '오시는 길', subUrl: '/about/locate' },
+      { id: 2, subTitle: 'Contact us', subUrl: '/contact' },
     ],
   },
   {
