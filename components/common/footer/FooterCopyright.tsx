@@ -29,14 +29,14 @@ function FooterCopyright() {
                   <i className="fas fa-angle-right" />
                   <a href="/sitemap" className="ml-1 text-decoration-none">
                     {' '}
-                    Sitemap
+                    사이트맵
                   </a>
                 </li>
                 <li>
                   <i className="fas fa-angle-right" />
-                  <a href="/contact" className="ml-1 text-decoration-none">
+                  <a href="/privacy" className="ml-1 text-decoration-none">
                     {' '}
-                    Contact Us
+                    개인정보처리방침
                   </a>
                 </li>
               </ul>
