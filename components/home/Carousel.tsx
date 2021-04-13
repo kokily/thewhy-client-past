@@ -6,7 +6,7 @@ function Carousel() {
       className="position-relative"
       data-dynamic-height="['670px','670px','670px','550px','500px']"
       style={{
-        backgroundImage: 'url(/img/slides/slide-bg.jpg)',
+        // backgroundImage: 'url(/img/slides/slide-bg.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '670px',

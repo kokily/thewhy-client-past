@@ -10,7 +10,7 @@ interface CardProps {
 function Card({ url, img, title, sub }: CardProps) {
   return (
     <div
-      className="col-sm-6 col-lg-3 mb-4 mb-lg-0 appear-animation"
+      className="col-sm-6 col-lg-4 mb-4 mb-lg-0 appear-animation"
       data-appear-animation="fadeInRightShorter"
     >
       <span className="thumb-info thumb-info-hide-wrapper-bg bg-transparent border-radius-0">
@@ -41,25 +41,14 @@ function MainLink() {
         </div>
 
         <div className="row pb-4 mb-2">
-          <Card
-            url="/question"
-            img="/img/main_link1.png"
-            title="교육문의"
-            sub="050-5055-7221"
-          />
-          <Card
-            url="/education"
-            img="/img/main_link2.png"
-            title="교육 프로그램"
-            sub="서비스, 비즈니스 등"
-          />
-          <Card url="/online" img="/img/main_link3.png" title="온라인 프로그램" sub="VOD" />
-          <Card
-            url="/stories"
-            img="/img/main_link4.png"
-            title="The Y 이야기"
-            sub="The Y 와 함께한 고객사, 교육내용"
-          />
+          <Card url="/" img="/img/main/main01.png" title="main01" sub="Main 01" />
+          <Card url="/" img="/img/main/main02.png" title="main02" sub="Main 02" />
+          <Card url="/" img="/img/main/main03.png" title="main03" sub="Main 03" />
+        </div>
+        <div className="row pb-4 mb-2">
+          <Card url="/" img="/img/main/main04.png" title="main04" sub="Main 04" />
+          <Card url="/" img="/img/main/main05.png" title="main05" sub="Main 05" />
+          <Card url="/" img="/img/main/main06.png" title="main06" sub="Main 06" />
         </div>
       </div>
     </section>
