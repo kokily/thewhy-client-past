@@ -1,157 +1,137 @@
 import React from 'react';
+import styled from 'styled-components';
+import oc from 'open-color';
+
+const SecondTitle = styled.h4`
+  color: ${oc.blue[5]};
+
+  &:after {
+    content: '';
+    display: block;
+    width: 120px;
+    border-bottom: 3px solid ${oc.blue[5]};
+    margin: 20px auto;
+  }
+`;
 
 function About() {
-  const Title = (
-    <div className="row pb-5 ">
-      <div className="col-md-9 mx-md-auto">
-        <div className="overflow-hidden mb-5">
-          <h1
-            className="word-rotator slide font-weight-bold text-8 mb-0 appear-animation text-center"
-            data-appear-animation="maskUp"
-          >
-            <span>더와이컴퍼니는 행복한 삶을 꿈꾸는</span>
-            <br />
-            <span className="word-rotator-words bg-primary">
-              <b className="is-visible">커뮤니케이션</b>
-              <b>커뮤니케이션</b>
-            </span>
-            <span>전문 교육 컨설팅 회사입니다.</span>
-          </h1>
-        </div>
-
-        <div className="overflow-hidden mb-3">
-          <p
-            className="lead mb-0 appear-animation"
-            data-appear-animation="maskUp"
-            data-appear-animation-delay="200"
-          >
-            강의를 시작한 건 2007년 부터입니다. 사내 강사로 시작하여 2014년 프리랜서, 현재는 The Y
-            컴퍼니를 이야기 하고자 합니다.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-
-  const Qutoa1 = () => (
-    <div className="container py-2">
-      <div className="row">
-        <div className="col">
-          <blockquote className="blockquote-tertiary">
-            <h4>우리가 존재하는 이유(Mission)는 "행복한 관계"를 꿈꾸는 것입니다.</h4>
-            <footer>
-              <cite title="SourceTitle">- 더와이컴퍼니</cite>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  );
-
-  const Content1 = () => (
-    <div className="container py-4">
-      <div className="row">
-        <div className="col">
-          <p className="lead text-4">
-            첫 직장은 고객응대가 많았던 직업이었습니다.
-            <br />
-            대면이든 비대면이든 늘 상담을 하고 특히 고객 만족팀에서는 마주하는 고객들과 좋은
-            이야기를 나누는 것이 아니니 감정적 소진이 심했어요
-            <br />
-            그래서 지금 생각해보니 내가 그곳에서 10년이나 근무할 수 있었던 것은 동료와의 "행복한
-            관계"였다고 생각합니다.
-          </p>
-          <p className="lead text-4">
-            야근을 하면서도 나눠먹는 떡볶이와 순대가 정말 맛있었고
-            <br />
-            주말이면 상사, 동료와 강릉 앞바다에서 직장 이야기, 인생이야기를 나누고
-            <br />
-            퇴사를 하고 나서 10년이 지났지만 남편과 아이와 같이 모임을 하며
-            <br />
-            어떻게 보면 "행복한 직장"은{' '}
-            <strong className="font-weight-extra-bold">"행복한 관계"</strong>를 나눌 때<br />
-            작은 갈등이 있어도
-            <br />
-            조직의 큰 문제가 생겨도
-            <br />
-            같이 해결해보자라는 의지가 생기도록 한다는 것을 알았습니다.
-          </p>
-          <h2 className="font-weight-normal text-7 mb-2">
-            그래서 <strong className="font-weight-extra-bold">더와이컴퍼니</strong>는
-          </h2>
-          <h3 className="font-weight-normal text-4 mb-2">첫째, 출근길에 콧노래 나오는 직장</h3>
-          <h3 className="font-weight-normal text-4 mb-2">둘째, 주말에도 보고 싶은 상사</h3>
-          <h3 className="font-weight-normal text-4">
-            셋째, 밥 한끼 먹을 수 있는 고객과의 관계를 상상합니다.
-          </h3>
-        </div>
-      </div>
-    </div>
-  );
-
-  const Qutoa2 = () => (
-    <div className="container py-2">
-      <div className="row">
-        <div className="col">
-          <blockquote className="blockquote-primary">
-            <h4>우리의 비전(Vision)은 믿을 수 있는 커뮤니케이터가 되는 것입니다.</h4>
-            <footer>
-              <cite title="SourceTitle">- 더와이컴퍼니</cite>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  );
-
-  const Content2 = () => (
-    <div className="container py-4">
-      <div className="row">
-        <div className="col">
-          <p className="lead text-4">
-            제 교육에는 늘 이런 믿음이 있습니다.
-            <br />
-            그래서 제가 강의를 의뢰받거나 강사를 섭외할 때는 이런 기준을 가지고 일을 합니다.
-          </p>
-
-          <h2 className="font-weight-normal text-7 mb-2">
-            <strong className="font-weight-extra-bold">더와이컴퍼니</strong>의{' '}
-            <strong className="font-weight-extra-bold">핵심가치</strong>는
-          </h2>
-          <h3 className="font-weight-normal text-4 mb-2">
-            하나. 사랑입니다. 우리 안의 사랑이 변화를 일으킬 것이라 믿습니다.
-          </h3>
-          <h3 className="font-weight-normal text-4 mb-2">
-            하나. 희망입니다. 할 수 있다라는 희망이 우리를 움직입니다.
-          </h3>
-          <h3 className="font-weight-normal text-4">
-            하나. 최선입니다. 최선을 다하는 마음은 우리를 더 성장시킬 것입니다.
-          </h3>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <>
-      <div className="container">
-        <div className="row pt-5">
-          <div className="col">{Title}</div>
+      <div className="container py-4">
+        <div className="row">
+          <div className="col">
+            <div className="post-image">
+              <img src="/img/about/about.png" alt="About" />
+            </div>
+          </div>
         </div>
       </div>
-      <Qutoa1 />
-      <Content1 />
-      <Qutoa2 />
-      <Content2 />
 
-      <div className="container">
-        <div className="row pb-5">
+      <div className="container pt-5">
+        <div className="row py-4 mb-2">
+          <div className="col-md-9 order-2">
+            <div className="overflow-hidden">
+              <h2
+                className="text-primary font-weight-bold text-8 mb-5 pt-0 mt-0 appear-animation animated maskUp appear-animation-visible"
+                data-appear-animation="maskUp"
+                style={{ animationDelay: '300ms' }}
+              >
+                ABOUT US : 더와이컨설팅 소개
+              </h2>
+              <p
+                className="lead appear-animation animated fadeInUpShorter appear-animation-visible text-6 line-height-4"
+                data-appear-animation="fadeInUpShorter"
+                style={{ animationDelay: '300ms' }}
+              >
+                더와이컨설팅은 개인과 조직의 행복한 관계를 꿈꾸는 커뮤니케이션 교육 전문기업입니다.
+              </p>
+              <p
+                className="lead appear-animation animated fadeInUpShorter appear-animation-visible text-6 line-height-4"
+                data-appear-animation="fadeInUpShorter"
+                style={{ animationDelay: '320ms' }}
+              >
+                직장인의 꿈은 퇴사라고 하는데, 직장에서 행복을 꿈꾸기는 어려울까요?
+                <br />
+                직장에서 행복을 찾기 위해서는 어떤 요인들이 필요할까요?
+              </p>
+              <p
+                className="lead appear-animation animated fadeInUpShorter appear-animation-visible text-6 line-height-4"
+                data-appear-animation="fadeInUpShorter"
+                style={{ animationDelay: '340ms' }}
+              >
+                다양한 요인들이 필요하겠지만
+                <br />
+                "내가 하는 일의 전문가"가 되어 인정받는 것.
+                <br />
+                함께 하는 "동료와의 행복한 관계"가
+                <br />
+                출근길의 발걸음을 조금 더 가볍게 만들지 않을까 생각합니다.
+              </p>
+              <p
+                className="lead appear-animation animated fadeInUpShorter appear-animation-visible text-6 line-height-4"
+                data-appear-animation="fadeInUpShorter"
+                style={{ animationDelay: '360ms' }}
+              >
+                조직의 성장과 발전을 위해
+                <br />
+                역량을 갖춘 인재를 양성하고, 함께할 동료가 있다면
+                <br />
+                무엇이든 해낼 수 있으리라 봅니다.
+              </p>
+              <p
+                className="lead appear-animation animated fadeInUpShorter appear-animation-visible text-6 line-height-4"
+                data-appear-animation="fadeInUpShorter"
+                style={{ animationDelay: '380ms' }}
+              >
+                결국 개인과 조직의 행복은 사람에 있다는 것을 믿으며,
+                <br />
+                더와이컨설팅은 고객이 행복해지는 순간을 연구하는
+                <br />
+                다양한 커뮤니케이션 프로그램을 연구하도록
+                <br />
+                하겠습니다.
+              </p>
+
+              <p
+                className="pb-3 appear-animation animated fadeInUpShorter appear-animation-visible"
+                data-appear-animation="fadeInUpShorter"
+                style={{ animationDelay: '450ms' }}
+              >
+                주식회사 더와이컨설팅
+                <br />
+                MASTER Communicator 김영화
+              </p>
+            </div>
+          </div>
+          <div
+            className="col-md-3 order-md-2 mb-4 mb-lg-0
+            appear-animation animated fadeInRightShorter appear-animatino-visible
+           "
+            data-appear-animation="fadeInRightShorter"
+            style={{ animationDelay: '100ms' }}
+          >
+            <img src="/img/about/about01.png" alt="about01" />
+          </div>
+        </div>
+      </div>
+
+      <div className="container pt-5">
+        <div className="row">
           <div className="col">
-            <p className="drop-caps drop-caps-style-2 text-4">
-              Y우리가 진행하는 모든 강의에 우리의 비전과 미션과 핵심가치가 잘 전달되도록 더 나은
-              강의가 되기 위해 늘 질문하는{' '}
-              <strong className="font-weight-extra-bold">더와이컴퍼니</strong>가 되겠습니다.
-            </p>
+            <SecondTitle
+              className="font-weight-bold text-8 mb-5 pt-0 mt-0 appear-animation animated maskUp appear-animation-visible text-center"
+              data-appear-animation="maskUp"
+              style={{ animationDelay: '500ms' }}
+            >
+              더와이컨설팅이 가는 길
+            </SecondTitle>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <div className="post-image">
+              <img src="/img/about/about02.png" alt="About02" />
+            </div>
           </div>
         </div>
       </div>
