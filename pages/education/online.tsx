@@ -1,6 +1,6 @@
 import React from 'react';
-import PageTemplate from '../components/common/PageTemplate';
-import Online from '../components/online/Online';
+import PageTemplate from '../../components/common/PageTemplate';
+import Online from '../../components/online/Online';
 
 function OnlinePage() {
   return (
