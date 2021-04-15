@@ -95,7 +95,7 @@ function MainLink() {
             sub="비즈니스 현장에서 역량 향상을 위한 커뮤니케이션 프로그램"
           />
           <FlipCard
-            url="/leader"
+            url="/education/leader"
             img="/img/main/main03.png"
             title="리더 커뮤니케이션"
             sub="조직의 성과와 효율적인 경영을 위한 리더의 커뮤니케이션 훈련 프로그램"
@@ -109,7 +109,7 @@ function MainLink() {
             sub="개인, 팀, 조직의 소통 능력 활성화와 교육훈련을 위한 행동성향 분석 프로그램"
           />
           <FlipCard
-            url="/education/empowerment"
+            url="/education"
             img="/img/main/main05.png"
             title="직무역량 강화 프로그램"
             sub="직무분석을 기반으로 직무역량 강화를 위한 교육훈련 프로그램"

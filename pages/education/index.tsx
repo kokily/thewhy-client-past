@@ -1,11 +1,11 @@
 import React from 'react';
 import PageTemplate from '../../components/common/PageTemplate';
-import Education from '../../components/education/Education';
+import Service from '../../components/education/Service';
 
 function EducationPage() {
   return (
     <PageTemplate>
-      <Education />
+      <Service />
     </PageTemplate>
   );
 }
