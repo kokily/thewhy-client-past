@@ -83,7 +83,7 @@ function MainLink() {
 
         <div className="row pb-4 mb-2">
           <FlipCard
-            url="/education/service"
+            url="/education"
             img="/img/main/main01.png"
             title="서비스 커뮤니케이션"
             sub="서비스 현장에서 역량 향상을 위한 커뮤니케이션 프로그램"
