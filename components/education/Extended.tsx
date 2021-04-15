@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
+import EduFooter from './EduFooter';
 
 const UL = styled.ul`
   border-top: 2px solid ${oc.indigo[7]};
@@ -77,6 +78,8 @@ function Extended() {
               </UL>
             </div>
           </div>
+
+          <EduFooter title={'Extended DISC 커뮤니케이션'} />
         </div>
       </div>
     </div>
