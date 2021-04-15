@@ -21,7 +21,7 @@ function About() {
         <div className="row">
           <div className="col">
             <div className="post-image">
-              <img src="/img/about/about.png" alt="About" />
+              <img className="img-fluid" src="/img/about/about.png" alt="About" />
             </div>
           </div>
         </div>
@@ -127,10 +127,10 @@ function About() {
             </SecondTitle>
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-5">
           <div className="col">
             <div className="post-image">
-              <img src="/img/about/about02.png" alt="About02" />
+              <img className="img-fluid" src="/img/about/about02.png" alt="About02" />
             </div>
           </div>
         </div>

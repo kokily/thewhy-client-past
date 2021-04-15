@@ -1,5 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 import NaverIcon from '../NaverIcon';
+
+const RightContentBox = styled.div`
+  @media screen and (max-width: 765px) {
+    display: none !important;
+  }
+`;
 
 function HeaderTop() {
   const LeftContent = () => (
@@ -50,7 +57,7 @@ function HeaderTop() {
   );
 
   const RightContent = () => (
-    <div className="header-column justify-content-end w-50 order-2 order-md-3">
+    <RightContentBox className="header-column justify-content-end w-50 order-2 order-md-3">
       <div className="header-row">
         <ul className="header-extra-info">
           <li className="m-0">
@@ -69,7 +76,7 @@ function HeaderTop() {
           </li>
         </ul>
       </div>
-    </div>
+    </RightContentBox>
   );
 
   return (

@@ -7,6 +7,7 @@ function MainImage() {
         <div className="col">
           <div className="post-image mt-10">
             <img
+              className="img-fluid"
               src="/img/main/main.png"
               alt="main"
               style={{ height: 'auto', overflow: 'hidden' }}
