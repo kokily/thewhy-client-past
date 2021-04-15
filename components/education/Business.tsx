@@ -7,13 +7,13 @@ const UL = styled.ul`
   padding-top: 2rem;
 `;
 
-function Service() {
+function Business() {
   return (
     <div className="container py-2">
       <div className="row">
         <div className="col">
           <div className="post-image">
-            <img className="img-fluid" src="/img/education/edu01.png" alt="Service" />
+            <img className="img-fluid" src="/img/education/edu02.png" alt="Service" />
           </div>
         </div>
       </div>
@@ -21,11 +21,13 @@ function Service() {
       <div className="row mt-5 justify-content-center">
         <div className="col-md-10">
           <h2 className="text-primary font-weight-bold text-8 mb-4 pt-0 mt-0">
-            서비스 커뮤니케이션
+            비즈니스 커뮤니케이션
           </h2>
           <p className="lead text-5 line-height-4 font-weight-bold">
-            서비스 현장에서 바람직한 커뮤니케이션은 무엇일까요? 친절성, 적극성 등 정형화된 내용이
-            아닌 고객사의 요구에 맞춰 사전 설문을 통해 맞춤화된 교육 프로그램을 제시합니다.
+            비즈니스 현장에서 발생되는 다양한 상황에 대한 교육 프로그램을 제시합니다.
+            <br />
+            사회생활이 처음인 신입사원에게 회사 생활에 대한 매너, 대화법 등 더 나은 비즈니스 역량을
+            고민하는 고객사를 위한 프로그램을 제시합니다.
           </p>
         </div>
       </div>
@@ -38,10 +40,9 @@ function Service() {
             </div>
             <div className="col-md-8">
               <UL>
-                <li>서비스 현장에서 대면/비대면으로 고객을 응대하는 고객사</li>
-                <li>서비스역량을 높이고 싶은 개인 및 담당자</li>
-                <li>현장의 서비스 응대능력을 평가하고 싶은 담당자</li>
-                <li>더 나은 서비스질을 위해 고민하는 모든 분</li>
+                <li>직장생활이 처음인 신입사원</li>
+                <li>더 나은 비즈니스 업무역량을 갖추고 싶은 경력사원</li>
+                <li>비즈니스 역량 향상을 고민하는 고객사</li>
               </UL>
             </div>
           </div>
@@ -54,7 +55,6 @@ function Service() {
               <UL>
                 <li>사전 미팅을 통한 고객의 이슈 및 니즈 파악</li>
                 <li>맞춤화된 프로그램 개발 및 반영</li>
-                <li>서비스 현장 경험 강사진</li>
                 <li>사후 보고서 제출 (교육 결과물에 대한 피드백 필요시)</li>
               </UL>
             </div>
@@ -66,13 +66,11 @@ function Service() {
             </div>
             <div className="col-md-8 p-3">
               <UL style={{ borderBottom: `2px solid ${oc.indigo[7]}`, paddingBottom: '2rem' }}>
-                <li>서비스 마인드 향상</li>
-                <li>서비스 역량 강화</li>
-                <li>전화응대 역량 강화</li>
-                <li>불만고객 응대</li>
-                <li>서비스인의 이미지메이킹</li>
-                <li>서비스 품질 모니터링</li>
-                <li>서비스 매뉴얼 제작</li>
+                <li>보고서 작성법</li>
+                <li>업무보고의 기술</li>
+                <li>비즈니스 대화법</li>
+                <li>비즈니스 매너 (비즈니스 복장 용모, 명함 수수 등)</li>
+                <li>업무 매뉴얼 제작</li>
               </UL>
             </div>
           </div>
@@ -82,5 +80,5 @@ function Service() {
   );
 }
 
-export default Service;
+export default Business;
 
