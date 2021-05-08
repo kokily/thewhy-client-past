@@ -14,13 +14,20 @@ function LoginContainer() {
   const onSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
 
+    if (password === '') {
+      alert('비밀번호를 입력해주세요');
+      return;
+    }
+
     try {
       const response = await LoginResolver({
         variables: { password },
       });
 
       if (response.data.Login.error) {
-        console.error(response.data.Login.error);
+        alert(response.data.Login.error);
+        setPassword('');
+        return;
       } else {
         if (!response || !response) return;
 

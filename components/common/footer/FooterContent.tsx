@@ -103,7 +103,7 @@ function FooterContent() {
       <div className="row py-5 my-4">
         {ContactUs}
         {PageInfos}
-        {Map}
+        {/*{Map}*/}
       </div>
     </div>
   );

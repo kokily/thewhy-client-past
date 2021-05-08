@@ -18,7 +18,7 @@ const NavMenu = [
       { id: 1, subTitle: '비즈니스 커뮤니케이션', subUrl: '/education/business' },
       { id: 2, subTitle: '리더의 커뮤니케이션', subUrl: '/education/leader' },
       { id: 3, subTitle: 'Extended-DISC 커뮤니케이션', subUrl: '/education/extended' },
-      { id: 4, subTitle: '직무역량강화', subUrl: '/education' },
+      { id: 4, subTitle: '직무역량강화', subUrl: '/education/ability' },
       { id: 5, subTitle: '온라인 프로그램', subUrl: '/education/online ' },
     ],
   },

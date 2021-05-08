@@ -56,15 +56,11 @@ function Contact({ name, email, subject, body, onChange, onSubmit }: ContactProp
       <ul className="list list-icons list-dark mt-2">
         <li>
           <i className="far fa-clock top-6" />
-          월요일 - 금요일, 09:00~17:00
+          월요일 - 금요일: 10:00~19:00
         </li>
         <li>
           <i className="far fa-clock top-6" />
-          토요일, 09:00~12:00
-        </li>
-        <li>
-          <i className="far fa-clock top-6" />
-          일요일, 휴일
+          토/일/공휴일: 휴무
         </li>
       </ul>
     </div>
@@ -72,7 +68,15 @@ function Contact({ name, email, subject, body, onChange, onSubmit }: ContactProp
 
   return (
     <>
-      <PageHeader title={'Contact 페이지'} />
+      <div className="container py-4">
+        <div className="row">
+          <div className="col">
+            <div className="post-image">
+              <img className="img-fluid" src="/img/about/about.png" alt="About" />
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="container">
         <div className="row py-4">
@@ -148,11 +152,9 @@ function Contact({ name, email, subject, body, onChange, onSubmit }: ContactProp
             <ContactUs />
             <WorkingHour />
 
-            <h4 className="pt-5">Get in Touch</h4>
+            <h4 className="pt-5"></h4>
             <p className="lead mb-0 text-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit
-              imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit.
+              
             </p>
           </div>
         </div>

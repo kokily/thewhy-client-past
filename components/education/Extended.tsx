@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import oc from 'open-color';
-import EduFooter from './EduFooter';
 
 const UL = styled.ul`
-  border-top: 2px solid ${oc.indigo[7]};
-  padding-top: 2rem;
+  border-top: 2px solid #493586;
+  padding-top: 1rem;
+
+  li {
+    line-height: 1.6;
+  }
 `;
 
 function Extended() {
@@ -20,11 +22,26 @@ function Extended() {
       </div>
 
       <div className="row mt-5 justify-content-center">
-        <div className="col-md-10">
-          <h2 className="text-primary font-weight-bold text-8 mb-4 pt-0 mt-0">
+        <div className="col-md-9">
+          <h2
+            className="mb-3 pt-0 mt-0"
+            style={{
+              fontFamily: '윤고딕330',
+              fontSize: '26px',
+              fontWeight: 600,
+              color: '#493586',
+            }}
+          >
             Extended-DISC 커뮤니케이션
           </h2>
-          <p className="lead text-5 line-height-4 font-weight-bold">
+          <p
+            className="line-height-4"
+            style={{
+              fontFamily: '윤고딕320',
+              fontSize: '20px',
+              wordBreak: 'keep-all',
+            }}
+          >
             확장된 DISC 진단을 통해 조직 구성원 개인의 성향뿐만 아니라 조직의 성향을 분석합니다.
             <br />
             개인, 팀, 조직의 소통 능력 활성화 뿐만 아니라 채용, 배치, 교육훈련을 위한 기초 데이터를
@@ -35,11 +52,23 @@ function Extended() {
         </div>
       </div>
 
-      <div className="row mt-4 justify-content-center pt-5">
-        <div className="col-md-8">
+      <div
+        className="row mt-4 justify-content-center pt-5"
+        style={{
+          fontFamily: '윤고딕320',
+          fontSize: '17px',
+        }}
+      >
+        <div className="col-md-9">
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/target.png" alt="Target" />
+              <img
+                src="/img/education/target.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Target"
+              />
             </div>
             <div className="col-md-8">
               <UL>
@@ -54,9 +83,15 @@ function Extended() {
 
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/character.png" alt="Character" />
+              <img
+                src="/img/education/character.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Character"
+              />
             </div>
-            <div className="col-md-8 p-3">
+            <div className="col-md-8">
               <UL>
                 <li>DISC 진단을 통한 개인별, 팀별 리포트 제공</li>
               </UL>
@@ -65,10 +100,16 @@ function Extended() {
 
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/program.png" alt="Program" />
+              <img
+                src="/img/education/program.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Program"
+              />
             </div>
-            <div className="col-md-8 p-3">
-              <UL style={{ borderBottom: `2px solid ${oc.indigo[7]}`, paddingBottom: '2rem' }}>
+            <div className="col-md-8">
+              <UL style={{ borderBottom: `2px solid #493586`, paddingBottom: '1rem' }}>
                 <li>개인 성향 진단</li>
                 <li>팀 성향 진단</li>
                 <li>팀&조직문화 진단</li>
@@ -79,7 +120,7 @@ function Extended() {
             </div>
           </div>
 
-          <EduFooter title={'Extended DISC 커뮤니케이션'} />
+          <img className="img-fluid mt-5 mb-5" src="/img/education/edu_footer.png" alt="" />
         </div>
       </div>
     </div>

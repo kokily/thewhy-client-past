@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Contact from '../../components/contact/Contact';
 import { SEND_CONTACT } from '../../libs/graphql/mail';
 import { ActionProps, StateProps } from '../../libs/types';
+import MainImage from '../../components/home/MainImage';
 
 function reducer(state: StateProps, action: ActionProps) {
   return {

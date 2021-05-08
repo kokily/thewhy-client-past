@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import oc from 'open-color';
-import EduFooter from './EduFooter';
 
 const UL = styled.ul`
-  border-top: 2px solid ${oc.indigo[7]};
-  padding-top: 2rem;
+  border-top: 2px solid #493586;
+  padding-top: 1rem;
+
+  li {
+    line-height: 1.6;
+  }
 `;
 
 function Leader() {
@@ -20,9 +22,26 @@ function Leader() {
       </div>
 
       <div className="row mt-5 justify-content-center">
-        <div className="col-md-10">
-          <h2 className="text-primary font-weight-bold text-8 mb-4 pt-0 mt-0">리더 커뮤니케이션</h2>
-          <p className="lead text-5 line-height-4 font-weight-bold">
+        <div className="col-md-9">
+          <h2
+            className="mb-3 pt-0 mt-0"
+            style={{
+              fontFamily: '윤고딕330',
+              fontSize: '26px',
+              fontWeight: 600,
+              color: '#493586',
+            }}
+          >
+            리더 커뮤니케이션
+          </h2>
+          <p
+            className="line-height-4"
+            style={{
+              fontFamily: '윤고딕320',
+              fontSize: '20px',
+              wordBreak: 'keep-all',
+            }}
+          >
             리더가 어떻게 말하느냐에 따라 조직의 성과, 문화를 좌우합니다. 하지만 커뮤니케이션의
             정답은 없습니다.
             <br />
@@ -34,11 +53,23 @@ function Leader() {
         </div>
       </div>
 
-      <div className="row mt-4 justify-content-center pt-5">
-        <div className="col-md-8">
+      <div
+        className="row mt-4 justify-content-center pt-5"
+        style={{
+          fontFamily: '윤고딕320',
+          fontSize: '17px',
+        }}
+      >
+        <div className="col-md-9">
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/target.png" alt="Target" />
+              <img
+                src="/img/education/target.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Target"
+              />
             </div>
             <div className="col-md-8">
               <UL>
@@ -50,9 +81,15 @@ function Leader() {
 
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/character.png" alt="Character" />
+              <img
+                src="/img/education/character.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Character"
+              />
             </div>
-            <div className="col-md-8 p-3">
+            <div className="col-md-8">
               <UL>
                 <li>사전 미팅을 통한 고객의 이슈 및 니즈 파악</li>
                 <li>맞춤화된 프로그램 개발 및 반영</li>
@@ -63,10 +100,16 @@ function Leader() {
 
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/program.png" alt="Program" />
+              <img
+                src="/img/education/program.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Program"
+              />
             </div>
-            <div className="col-md-8 p-3">
-              <UL style={{ borderBottom: `2px solid ${oc.indigo[7]}`, paddingBottom: '2rem' }}>
+            <div className="col-md-8">
+              <UL style={{ borderBottom: `2px solid #493586`, paddingBottom: '1rem' }}>
                 <li>갈등관리</li>
                 <li>리더의 회의법</li>
                 <li>리더의 대화법</li>
@@ -74,7 +117,7 @@ function Leader() {
             </div>
           </div>
 
-          <EduFooter title={'리더 커뮤니케이션'} />
+          <img className="img-fluid mt-5 mb-5" src="/img/education/edu_footer.png" alt="" />
         </div>
       </div>
     </div>
@@ -82,4 +125,3 @@ function Leader() {
 }
 
 export default Leader;
-

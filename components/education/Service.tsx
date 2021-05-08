@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import oc from 'open-color';
-import EduFooter from './EduFooter';
 
 const UL = styled.ul`
-  border-top: 2px solid ${oc.indigo[7]};
-  padding-top: 2rem;
+  border-top: 2px solid #493586;
+  padding-top: 1rem;
+
+  li {
+    line-height: 1.6;
+  }
 `;
 
 function Service() {
@@ -20,22 +22,49 @@ function Service() {
       </div>
 
       <div className="row mt-5 justify-content-center">
-        <div className="col-md-10">
-          <h2 className="text-primary font-weight-bold text-8 mb-4 pt-0 mt-0">
+        <div className="col-md-9">
+          <h2
+            className="mb-3 pt-0 mt-0"
+            style={{
+              fontFamily: '윤고딕330',
+              fontSize: '26px',
+              fontWeight: 600,
+              color: '#493586',
+            }}
+          >
             서비스 커뮤니케이션
           </h2>
-          <p className="lead text-5 line-height-4 font-weight-bold">
+          <p
+            className="line-height-4"
+            style={{
+              fontFamily: '윤고딕320',
+              fontSize: '20px',
+              wordBreak: 'keep-all',
+            }}
+          >
             서비스 현장에서 바람직한 커뮤니케이션은 무엇일까요? 친절성, 적극성 등 정형화된 내용이
             아닌 고객사의 요구에 맞춰 사전 설문을 통해 맞춤화된 교육 프로그램을 제시합니다.
           </p>
         </div>
       </div>
 
-      <div className="row mt-4 justify-content-center pt-5">
-        <div className="col-md-8">
+      <div
+        className="row mt-4 justify-content-center pt-5"
+        style={{
+          fontFamily: '윤고딕320',
+          fontSize: '17px',
+        }}
+      >
+        <div className="col-md-9">
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/target.png" alt="Target" />
+              <img
+                src="/img/education/target.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Target"
+              />
             </div>
             <div className="col-md-8">
               <UL>
@@ -49,9 +78,15 @@ function Service() {
 
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/character.png" alt="Character" />
+              <img
+                src="/img/education/character.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Character"
+              />
             </div>
-            <div className="col-md-8 p-3">
+            <div className="col-md-8 ">
               <UL>
                 <li>사전 미팅을 통한 고객의 이슈 및 니즈 파악</li>
                 <li>맞춤화된 프로그램 개발 및 반영</li>
@@ -63,10 +98,16 @@ function Service() {
 
           <div className="row align-items-center">
             <div className="col-md-4 text-center">
-              <img src="/img/education/program.png" alt="Program" />
+              <img
+                src="/img/education/program.png"
+                style={{
+                  maxWidth: '100px',
+                }}
+                alt="Program"
+              />
             </div>
-            <div className="col-md-8 p-3">
-              <UL style={{ borderBottom: `2px solid ${oc.indigo[7]}`, paddingBottom: '2rem' }}>
+            <div className="col-md-8">
+              <UL style={{ borderBottom: `2px solid #493586`, paddingBottom: '1rem' }}>
                 <li>서비스 마인드 향상</li>
                 <li>서비스 역량 강화</li>
                 <li>전화응대 역량 강화</li>
@@ -78,7 +119,7 @@ function Service() {
             </div>
           </div>
 
-          <EduFooter title={'서비스 커뮤니케이션'} />
+          <img className="img-fluid mt-5 mb-5" src="/img/education/edu_footer.png" alt="" />
         </div>
       </div>
     </div>
@@ -86,4 +127,3 @@ function Service() {
 }
 
 export default Service;
-

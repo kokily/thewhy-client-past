@@ -37,9 +37,13 @@ function HeaderTop() {
     </div>
   );
 
+  const CenterLogo = styled.div`
+    justify-content: center !important;
+  `;
+
   const CenterContent = () => (
     <div className="header-column justify-content-start justify-content-md-center order-1 order-md-2">
-      <div className="header-row">
+      <CenterLogo className="header-row">
         <div className="header-logo">
           <a href="/">
             <img
@@ -48,11 +52,11 @@ function HeaderTop() {
               height="96"
               data-sticky-width="200"
               data-sticky-height="82"
-              src="/img/logo1.png"
+              src="/img/main-logo-fixed.png"
             />
           </a>
         </div>
-      </div>
+      </CenterLogo>
     </div>
   );
 
@@ -63,10 +67,18 @@ function HeaderTop() {
           <li className="m-0">
             <div className="feature-box reverse-allres feature-box-style-2 align-items-center">
               <div className="feature-box-icon">
-                <i className="fab fa-whatsapp text-7 p-relative" style={{ top: '-2px' }} />
+                <i
+                  className="fab fa-whatsapp text-7 p-relative"
+                  style={{ top: '-2px', color: '#463884' }}
+                />
               </div>
               <div className="feature-box-info">
-                <p className="pb-0 font-weight-semibold line-height-5 text-2">
+                <p
+                  className="pb-0 font-weight-semibold line-height-5 text-2"
+                  style={{
+                    fontFamily: 'helvetica serif',
+                  }}
+                >
                   050-5055-7221
                   <br />
                   thewhycompany@naver.com

@@ -4,7 +4,7 @@ import { MenuProps } from '../../../libs/types';
 
 function NavItem({ title, url, items }: MenuProps) {
   return (
-    <li className="dropdown">
+    <li className="dropdown" style={{ marginRight: '5rem' }}>
       <a className="dropdown-item dropdown-toggle" href={url}>
         {title}
       </a>
