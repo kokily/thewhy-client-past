@@ -37,10 +37,13 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-          <meta name="keywords" content="커뮤니케이션, 교육, 강의, 더와이컨설팅, 더와이, The Y ConsulTing, Y" />
+          <meta
+            name="keywords"
+            content="커뮤니케이션, 교육, 강의, 더와이컨설팅, 더와이, The Y ConsulTing, Y"
+          />
           <meta
             name="description"
-            content="Community, Education, edu, the why, The Y Consulting, 더와이컨설팅, 더와이"
+            content="더와이컨설팅은 개인과 조직의 행복한 관계를 꿈꾸는 커뮤니케이션 교육 전문기업입니다"
           />
           <meta name="author" content="thewhy.kr" />
 
