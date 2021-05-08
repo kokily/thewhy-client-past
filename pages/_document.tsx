@@ -46,6 +46,12 @@ class MyDocument extends Document {
             content="더와이컨설팅은 개인과 조직의 행복한 관계를 꿈꾸는 커뮤니케이션 교육 전문기업입니다"
           />
           <meta name="author" content="thewhy.kr" />
+          <meta property="og:title" content="더와이컨설팅" />
+          <meta
+            property="og:description"
+            content="더와이컨설팅은 개인과 조직의 행복한 관계를 꿈꾸는 커뮤니케이션 교육 전문기업입니다"
+          />
+          <meta property="og:image" content="/img/main-logo.png" />
 
           <link rel="shortcut icon" href="/img/favicon.ico" type="iamge/x-icon" />
           <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
