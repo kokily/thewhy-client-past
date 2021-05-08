@@ -1,5 +1,5 @@
-import { GetServerSideProps } from 'next';
 import React from 'react';
+import { GetServerSideProps } from 'next';
 import PageTemplate from '../../components/common/PageTemplate';
 import QuestionContainer from '../../containers/question/QuestionContainer';
 import { initializeApollo } from '../../libs/apollo/client';

@@ -37,10 +37,10 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-          <meta name="keywords" content="커뮤니케이션, 교육, 강의, 더와이컴퍼니, 더와이" />
+          <meta name="keywords" content="커뮤니케이션, 교육, 강의, 더와이컨설팅, 더와이, The Y ConsulTing, Y" />
           <meta
             name="description"
-            content="Community, Education, edu, the why, the why company, 더와이컴퍼니, 더와이"
+            content="Community, Education, edu, the why, The Y Consulting, 더와이컨설팅, 더와이"
           />
           <meta name="author" content="thewhy.kr" />
 
