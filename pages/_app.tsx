@@ -33,7 +33,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>The Y 컴퍼니 - The Why Company</title>
+        <title>The Y 컨설팅 - The Why Consulting</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
