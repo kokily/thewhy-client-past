@@ -50,7 +50,7 @@ devApp.prepare().then(() => {
       },
       app.callback()
     );
-    server2 = http.createServer(app.callback);
+    server2 = http.createServer(app.callback());
 
     server2.listen(80);
     server.listen(config.port, () => {
