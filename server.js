@@ -4,6 +4,7 @@ const next = require('next');
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
+const sendfile = require('koa-sendfile');
 
 const dev = process.env.NODE_ENV !== 'production';
 const devApp = next({ dev });
@@ -21,6 +22,11 @@ devApp.prepare().then(() => {
 
   router.all('(.*)', async (ctx) => {
     await handle(ctx.req, ctx.res);
+    ctx.respond = false;
+  });
+
+  router.get('/robots.txt', async (ctx) => {
+    await sendfile(ctx, './public/robots.txt');
     ctx.respond = false;
   });
 
