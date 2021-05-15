@@ -5,7 +5,7 @@ const https = require('https');
 const http = require('http');
 const fs = require('fs');
 const sendfile = require('koa-sendfile');
-const forceHTTPS = require('koa-force-https');
+const forceHTTPS = require('koa-force-ssl');
 
 const dev = process.env.NODE_ENV !== 'production';
 const devApp = next({ dev });
