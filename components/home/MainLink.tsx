@@ -35,7 +35,7 @@ function FlipCard({ url, img, title, sub, onClick }: CardProps) {
     <div className="col-md-6 col-lg-4">
       <div className="card align-items-center">
         <CardTopImage className="card-img-top" src={img} alt={title} onClick={() => onClick(url)} />
-        <div className="card-body">
+        <div className="card-body pl-1 pr-1">
           <Title
             className="card-title text-center mb-2 pt-1"
             style={{

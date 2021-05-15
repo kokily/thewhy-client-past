@@ -3,6 +3,8 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 import { useApollo } from '../libs/apollo/client';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -57,7 +59,10 @@ function App({ Component, pageProps }: AppProps) {
         />
         <meta property="og:image" content="/img/main-logo.png" />
         <meta name="naver-site-verification" content="f3f768e9435f138e44540040fb7a46bd8c6fd427" />
-        <meta name="google-site-verification" content="m_pjAMeok3jUr2aJg_qWwvbBFERcYCjiuxWm4YE5_V4" />
+        <meta
+          name="google-site-verification"
+          content="m_pjAMeok3jUr2aJg_qWwvbBFERcYCjiuxWm4YE5_V4"
+        />
 
         <link rel="shortcut icon" href="/img/favicon.ico" type="iamge/x-icon" />
         <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
