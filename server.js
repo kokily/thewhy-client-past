@@ -5,6 +5,7 @@ const https = require('https');
 const http = require('http');
 const fs = require('fs');
 const sendfile = require('koa-sendfile');
+const forceHTTPS = require('koa-force-https');
 
 const dev = process.env.NODE_ENV !== 'production';
 const devApp = next({ dev });
@@ -36,8 +37,10 @@ devApp.prepare().then(() => {
   });
 
   app.use(router.routes());
+  app.use(forceHTTPS());
 
   let server;
+  let server2;
 
   if (config.ssl) {
     server = https.createServer(
@@ -47,11 +50,17 @@ devApp.prepare().then(() => {
       },
       app.callback()
     );
-  } else {
-    server = http.createServer(app.callback());
-  }
+    server2 = http.createServer(app.callback);
 
-  server.listen(config.port, () => {
-    console.log(`> Ready on http(s)://${config.hostname}:${config.port}`);
-  });
+    server2.listen(80);
+    server.listen(config.port, () => {
+      console.log(`> Ready on http(s)://${config.hostname}:${config.port}`);
+    });
+  } else {
+    server2 = http.createServer(app.callback());
+
+    server2.listen(config.port, () => {
+      console.log(`> Dev server 4000`);
+    });
+  }
 });
