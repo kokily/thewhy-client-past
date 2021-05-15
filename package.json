@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sitemap": "node ./syncSitemap.js",
     "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
@@ -22,6 +23,7 @@
     "marked": "^2.0.1",
     "next": "10.0.7",
     "open-color": "^1.8.0",
+    "prettier": "2.3.0",
     "prismjs": "^1.23.0",
     "react": "17.0.1",
     "react-device-detect": "1.17.0",
@@ -36,6 +38,7 @@
     "@types/js-cookie": "^2.2.6",
     "@types/marked": "^2.0.0",
     "@types/node": "^14.14.31",
+    "@types/prettier": "2.2.3",
     "@types/prismjs": "^1.16.3",
     "@types/react": "^17.0.2",
     "@types/react-scroll-sync": "^0.8.0",
