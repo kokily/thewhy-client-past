@@ -5,6 +5,7 @@ const https = require('https');
 const http = require('http');
 const fs = require('fs');
 const serve = require('koa-static');
+const { default: enforceHttps } = require('koa-sslify');
 
 const dev = process.env.NODE_ENV !== 'production';
 const devApp = next({ dev });
@@ -13,7 +14,7 @@ const handle = devApp.getRequestHandler();
 devApp.prepare().then(() => {
   const app = new Koa();
   const router = new Router();
-  
+
   const configurations = {
     production: { ssl: true, port: 443, hostname: 'thewhy.kr' },
     development: { ssl: false, port: 3000, hostname: 'localhost' },
@@ -31,7 +32,12 @@ devApp.prepare().then(() => {
     await next();
   });
 
-  app.use(serve('./public'));  
+  app.use(serve('./public'));
+  app.use(
+    enforceHttps({
+      port: 80,
+    })
+  );
   app.use(router.routes());
 
   let server;
@@ -47,9 +53,7 @@ devApp.prepare().then(() => {
       app.callback()
     );
 
-    server2.listen(80, () => {
-      this.redirect('https://thewhy.kr')
-    });
+    server2.listen(80);
     server.listen(config.port, () => {
       console.log(`> Ready on http(s)://${config.hostname}:${config.port}`);
     });
