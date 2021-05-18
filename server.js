@@ -4,7 +4,6 @@ const next = require('next');
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
-const forceHTTPS = require('koa-force-ssl');
 const serve = require('koa-static');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -34,7 +33,6 @@ devApp.prepare().then(() => {
 
   app.use(serve('./public'));  
   app.use(router.routes());
-  app.use(forceHTTPS());
 
   let server;
   let server2;
@@ -49,7 +47,9 @@ devApp.prepare().then(() => {
       app.callback()
     );
 
-    server2.listen(80);
+    server2.listen(80, (ctx) => {
+      ctx.redirect('https://thewhy.kr')
+    });
     server.listen(config.port, () => {
       console.log(`> Ready on http(s)://${config.hostname}:${config.port}`);
     });
