@@ -5,7 +5,6 @@ const https = require('https');
 const http = require('http');
 const fs = require('fs');
 const serve = require('koa-static');
-const { default: enforceHttps } = require('koa-sslify');
 
 const dev = process.env.NODE_ENV !== 'production';
 const devApp = next({ dev });
@@ -39,9 +38,7 @@ devApp.prepare().then(() => {
   let server2;
 
   if (config.ssl) {
-    server2 = http.createServer((ctx) => {
-      ctx.redirect('https://thewhy.kr');
-    });
+    server2 = http.createServer(app.callback());
     server = https.createServer(
       {
         key: fs.readFileSync(`${process.env.SSL_KEY}`),
