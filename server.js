@@ -47,8 +47,8 @@ devApp.prepare().then(() => {
       app.callback()
     );
 
-    server2.listen(80, (ctx) => {
-      ctx.redirect('https://thewhy.kr')
+    server2.listen(80, () => {
+      this.redirect('https://thewhy.kr')
     });
     server.listen(config.port, () => {
       console.log(`> Ready on http(s)://${config.hostname}:${config.port}`);
