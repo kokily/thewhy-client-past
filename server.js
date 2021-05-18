@@ -35,7 +35,7 @@ devApp.prepare().then(() => {
   app.use(serve('./public'));
   app.use(
     enforceHttps({
-      port: 80,
+      port: 443,
     })
   );
   app.use(router.routes());
