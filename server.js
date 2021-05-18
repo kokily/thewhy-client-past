@@ -33,18 +33,15 @@ devApp.prepare().then(() => {
   });
 
   app.use(serve('./public'));
-  app.use(
-    enforceHttps({
-      port: 443,
-    })
-  );
   app.use(router.routes());
 
   let server;
   let server2;
 
   if (config.ssl) {
-    server2 = http.createServer(app.callback());
+    server2 = http.createServer(app.callback(), (ctx) => {
+      ctx.redirect('https://thewhy.kr');
+    });
     server = https.createServer(
       {
         key: fs.readFileSync(`${process.env.SSL_KEY}`),
