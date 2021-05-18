@@ -39,7 +39,7 @@ devApp.prepare().then(() => {
   let server2;
 
   if (config.ssl) {
-    server2 = http.createServer(app.callback(), (ctx) => {
+    server2 = http.createServer((ctx) => {
       ctx.redirect('https://thewhy.kr');
     });
     server = https.createServer(
