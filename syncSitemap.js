@@ -17,7 +17,7 @@ const routes = [
   '/education/business',
   '/education/leader',
   '/education/extended',
-  '/education/abillity',
+  '/education/ability',
   '/education/online',
   '/stories',
   '/notice',
