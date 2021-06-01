@@ -1,5 +1,5 @@
 import React from 'react';
-import WriteContent from '../../components/notice/WriteContent';
+import WriteContent from '../../../components/notice/temp/WriteContent';
 
 interface WriteContentContainerProps {
   title: string;
