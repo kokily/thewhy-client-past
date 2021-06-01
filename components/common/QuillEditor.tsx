@@ -112,9 +112,7 @@ const QuillEditor: React.FC<Props> = ({ QuillChange, body }) => {
 
     const quill = quillIns.current;
 
-    if (body) {
-      quill.root.innerHTML = body;
-    }
+    quill.root.innerHTML = body;
 
     quill.on('text-change', () => {
       QuillChange(quill.root.innerHTML);
