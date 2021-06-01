@@ -45,6 +45,7 @@ const Container = styled.button<{ submit?: boolean; back?: boolean }>`
 interface Props {
   submit?: boolean;
   back?: boolean;
+  onClick?: any;
 }
 
 const Button: React.FC<Props> = ({ children, submit, back, ...rest }) => {
