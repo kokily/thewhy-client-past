@@ -1,9 +1,9 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { READ_NOTICE } from '../../libs/graphql/notice';
-import { NoticeType } from '../../libs/types';
-import WriteLayout from '../../components/common/WriteLayout';
+import { READ_NOTICE } from '../../../libs/graphql/notice';
+import { NoticeType } from '../../../libs/types';
+import WriteLayout from '../../../components/common/WriteLayout';
 import WriteHeaderContainer from './WriteHeaderContainer';
 import WritePreviewContainer from './WritePreviewContainer';
 import WriteContentContainer from './WriteContentContainer';

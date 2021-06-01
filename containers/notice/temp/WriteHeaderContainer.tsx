@@ -1,10 +1,10 @@
 import React from 'react';
 import { useApolloClient, useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
-import { NoticeType } from '../../libs/types';
-import { ADD_NOTICE, UPDATE_NOTICE } from '../../libs/graphql/notice';
-import WriteHeader from '../../components/notice/WriteHeader';
-import { devServer, isProd, prodServer } from '../../libs/constants';
+import { NoticeType } from '../../../libs/types';
+import { ADD_NOTICE, UPDATE_NOTICE } from '../../../libs/graphql/notice';
+import WriteHeader from '../../../components/notice/temp/WriteHeader';
+import { devServer, isProd, prodServer } from '../../../libs/constants';
 
 interface WriteHeaderContainerProps {
   noticeId: string;

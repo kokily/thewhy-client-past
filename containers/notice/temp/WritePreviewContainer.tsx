@@ -1,5 +1,5 @@
 import React from 'react';
-import WritePreview from '../../components/notice/WritePreview';
+import WritePreview from '../../../components/notice/temp/WritePreview';
 
 interface WritePreviewContainerProps {
   title: string;

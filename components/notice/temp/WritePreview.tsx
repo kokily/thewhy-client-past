@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
-import MarkdownRender from '../common/MarkdownRender';
+import MarkdownRender from '../../common/MarkdownRender';
 
 interface WritePreviewProps {
   title: string;
