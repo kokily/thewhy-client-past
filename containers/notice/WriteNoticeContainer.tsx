@@ -85,6 +85,7 @@ const WriteNoticeContainer: React.FC<Props> = ({ edit }) => {
   return (
     <EditorPane
       title={title}
+      body={body}
       onChangeTitle={onChangeTitle}
       onChangeBody={onChangeBody}
       onBack={onBack}

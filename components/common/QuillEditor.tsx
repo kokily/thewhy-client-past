@@ -62,19 +62,24 @@ export const modules = {
   },
 };
 
-function QuillEditor({ QuillChange }) {
+interface Props {
+  QuillChange: (text: string) => void;
+  body: string;
+}
+
+const QuillEditor: React.FC<Props> = ({ QuillChange, body }) => {
   const Quill = typeof window === 'object' ? require('quill') : () => false;
   const quillEl = useRef(null);
   const quillIns = useRef(null);
 
   const onClickImage = () => {
     const upload = document.createElement('input');
-    
+
     upload.setAttribute('type', 'file');
     upload.setAttribute('accept', 'image/*');
     upload.click();
 
-    upload.onchange = async function() {
+    upload.onchange = async function () {
       if (!upload.files) return;
 
       const file = upload.files[0];
@@ -89,12 +94,12 @@ function QuillEditor({ QuillChange }) {
 
       const data = await response.json();
 
-      const range = quillIns.current.getSelection(true)
-        
+      const range = quillIns.current.getSelection(true);
+
       quillIns.current.insertEmbed(range.index, 'image', `https://image.thewhy.kr/${data.key}`);
       quillIns.current.setSelection(range.index + 1);
-    }
-  }
+    };
+  };
 
   useEffect(() => {
     if (quillEl.current) {
@@ -109,17 +114,21 @@ function QuillEditor({ QuillChange }) {
 
     quill.on('text-change', () => {
       QuillChange(quill.root.innerHTML);
-    })
+    });
+
+    if (body) {
+      quill.root.innerHTML = body;
+    }
 
     const toolbar = quill.getModule('toolbar');
     toolbar.addHandler('image', onClickImage);
-  },[])
+  }, []);
 
   return (
     <Container>
       <div ref={quillEl} style={{ border: 'none' }} />
     </Container>
   );
-}
+};
 
 export default QuillEditor;
