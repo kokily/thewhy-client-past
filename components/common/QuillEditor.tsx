@@ -112,13 +112,13 @@ const QuillEditor: React.FC<Props> = ({ QuillChange, body }) => {
 
     const quill = quillIns.current;
 
-    quill.on('text-change', () => {
-      QuillChange(quill.root.innerHTML);
-    });
-
     if (body) {
       quill.root.innerHTML = body;
     }
+
+    quill.on('text-change', () => {
+      QuillChange(quill.root.innerHTML);
+    }); 
 
     const toolbar = quill.getModule('toolbar');
     toolbar.addHandler('image', onClickImage);
