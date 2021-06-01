@@ -35,6 +35,7 @@ const Wrapper = styled.div`
 `;
 
 interface Props {
+  edit: boolean;
   title: string;
   body: string;
   onChangeTitle: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -44,6 +45,7 @@ interface Props {
 }
 
 const EditorPane: React.FC<Props> = ({
+  edit,
   title,
   body,
   onChangeTitle,
@@ -56,7 +58,7 @@ const EditorPane: React.FC<Props> = ({
       <EditorBox>
         <Wrapper>
           <EditorTitle placeholder="제목을 입력하세요" onChange={onChangeTitle} value={title} />
-          <QuillEditor QuillChange={onChangeBody} body={body} />
+          <QuillEditor edit={edit} QuillChange={onChangeBody} body={body} />
         </Wrapper>
 
         <EditorFooter onBack={onBack} onSubmit={onSubmit} />

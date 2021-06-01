@@ -63,11 +63,12 @@ export const modules = {
 };
 
 interface Props {
+  edit: boolean;
   QuillChange: (text: string) => void;
   body: string;
 }
 
-const QuillEditor: React.FC<Props> = ({ QuillChange, body }) => {
+const QuillEditor: React.FC<Props> = ({ edit, QuillChange, body }) => {
   const Quill = typeof window === 'object' ? require('quill') : () => false;
   const quillEl = useRef(null);
   const quillIns = useRef(null);
@@ -112,15 +113,25 @@ const QuillEditor: React.FC<Props> = ({ QuillChange, body }) => {
 
     const quill = quillIns.current;
 
-    quill.root.innerHTML = body;
-
     quill.on('text-change', () => {
       QuillChange(quill.root.innerHTML);
-    }); 
+    });
 
     const toolbar = quill.getModule('toolbar');
     toolbar.addHandler('image', onClickImage);
   }, []);
+
+  const mounted = useRef(false);
+
+  useEffect(() => {
+    if (mounted.current) return;
+
+    if (body) {
+      mounted.current = true;
+    
+      quillIns.current.root.innerHTML = body;
+    }    
+  }, [body]);
 
   return (
     <Container>

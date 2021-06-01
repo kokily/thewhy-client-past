@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useApolloClient, useMutation, useQuery } from '@apollo/react-hooks';
 import { ADD_NOTICE, READ_NOTICE, UPDATE_NOTICE } from '../../libs/graphql/notice';
@@ -25,9 +25,9 @@ const WriteNoticeContainer: React.FC<Props> = ({ edit }) => {
     setTitle(e.target.value);
   };
 
-  const onChangeBody = (text: string) => {
+  const onChangeBody = useCallback((text: string) => {
     setBody(text);
-  };
+  }, []);
 
   const onBack = () => {
     router.back();
@@ -84,6 +84,7 @@ const WriteNoticeContainer: React.FC<Props> = ({ edit }) => {
 
   return (
     <EditorPane
+      edit={edit}
       title={title}
       body={body}
       onChangeTitle={onChangeTitle}
