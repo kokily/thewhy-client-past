@@ -10,6 +10,7 @@ const formatting = (target) =>
   });
 
 const routes = [
+  '/',
   '/about',
   '/about/locate',
   '/contact',
