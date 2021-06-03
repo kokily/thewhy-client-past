@@ -34,18 +34,36 @@ function ReadQuestionContainer() {
   };
 
   const onRemove = async () => {
-    try {
-      const response = await RemoveQuestion({
-        variables: { id },
-      });
+    if (!me) {
+      let password = window.prompt('작성 시 비밀번호는?');
 
-      if (!response || !response.data) return;
+      try {
+        const response = await RemoveQuestion({
+          variables: { id, password },
+        });
 
-      await client.clearStore();
+        if (!response || !response.data) return;
 
-      router.push('/question');
-    } catch (err) {
-      alert(err);
+        await client.clearStore();
+
+        router.push('/question');
+      } catch (err) {
+        alert(err);
+      }
+    } else {
+      try {
+        const response = await RemoveQuestion({
+          variables: { id },
+        });
+
+        if (!response || !response.data) return;
+
+        await client.clearStore();
+
+        router.push('/question');
+      } catch (err) {
+        alert(err);
+      }
     }
   };
 

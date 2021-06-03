@@ -66,6 +66,7 @@ export const READ_QUESTION = gql`
           id
           body
         }
+        password
         created_at
         updated_at
       }
