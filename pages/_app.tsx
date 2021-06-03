@@ -64,6 +64,7 @@ function App({ Component, pageProps }: AppProps) {
           name="google-site-verification"
           content="m_pjAMeok3jUr2aJg_qWwvbBFERcYCjiuxWm4YE5_V4"
         />
+        <meta name="robots" content="index" />
         <link rel="canonical" href="https://thewhy.kr" />
 
         <link rel="shortcut icon" href="/img/favicon.ico" type="iamge/x-icon" />
