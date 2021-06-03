@@ -112,7 +112,7 @@ export const ADD_QUESTION = gql`
  * }
  */
 export const REMOVE_QUESTION = gql`
-  mutation RemoveQuestion($id: ID!, $password: String!) {
+  mutation RemoveQuestion($id: ID!, $password: String) {
     RemoveQuestion(id: $id, password: $password) {
       ok
       error
