@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { useApolloClient, useMutation, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import { READ_QUESTION, REMOVE_QUESTION, VALID_PASSWORD } from '../../libs/graphql/questions';
+import {
+  READ_QUESTION,
+  REMOVE_ADMIN_QUESTION,
+  REMOVE_QUESTION,
+  VALID_PASSWORD,
+} from '../../libs/graphql/questions';
 import { MeType, QuestionType } from '../../libs/types';
 import { ME } from '../../libs/graphql/auth';
 import ReadQuestion from '../../components/question/ReadQuestion';
@@ -21,6 +26,7 @@ function ReadQuestionContainer() {
   const [toggle, setToggle] = useState(false);
   const [reply, setReply] = useState('');
   const [RemoveQuestion] = useMutation(REMOVE_QUESTION);
+  const [RemoveAdminQuestion] = useMutation(REMOVE_ADMIN_QUESTION);
   const [AddReply] = useMutation(ADD_REPLY);
   const [RemoveReply] = useMutation(REMOVE_REPLY);
   const [ValidPassword] = useMutation(VALID_PASSWORD);
@@ -52,7 +58,7 @@ function ReadQuestionContainer() {
       }
     } else {
       try {
-        const response = await RemoveQuestion({
+        const response = await RemoveAdminQuestion({
           variables: { id },
         });
 

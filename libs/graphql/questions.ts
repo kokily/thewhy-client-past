@@ -177,3 +177,12 @@ export const VALID_PASSWORD = gql`
     }
   }
 `;
+
+export const REMOVE_ADMIN_QUESTION = gql`
+  mutation RemoveAdminQuestion($id: ID!) {
+    RemoveAdminQuestion(id: $id) {
+      ok
+      error
+    }
+  }
+`;
