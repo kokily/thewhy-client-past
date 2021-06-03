@@ -36,7 +36,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>The Y 컨설팅 - The Why Consulting</title>
+        <title>더와이컨설팅 - The Why Consulting</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
@@ -46,7 +46,7 @@ function App({ Component, pageProps }: AppProps) {
 
         <meta
           name="keywords"
-          content="커뮤니케이션, 교육, 강의, 더와이컨설팅, 더와이, The Y ConsulTing, Y"
+          content="커뮤니케이션, 교육, 커뮤니케이션 교육 강의, 더와이컨설팅, 더와이, The Y ConsulTing, Y"
         />
         <meta
           name="description"
@@ -64,7 +64,6 @@ function App({ Component, pageProps }: AppProps) {
           name="google-site-verification"
           content="m_pjAMeok3jUr2aJg_qWwvbBFERcYCjiuxWm4YE5_V4"
         />
-        <meta name="robots" content="index" />
         <link rel="canonical" href="https://thewhy.kr" />
 
         <link rel="shortcut icon" href="/img/favicon.ico" type="iamge/x-icon" />
