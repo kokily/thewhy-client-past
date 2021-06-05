@@ -44,7 +44,7 @@ devApp.prepare().then(() => {
   let server2;
 
   if (config.ssl) {
-    server2 = http.createServer(app.callback(), app.use(redirectHttps()));
+    server2 = http.createServer(app.callback());
     server = https.createServer(
       {
         key: fs.readFileSync(`${process.env.SSL_KEY}`),
