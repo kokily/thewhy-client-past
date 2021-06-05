@@ -45,7 +45,7 @@ function HeaderTop() {
     <div className="header-column justify-content-start justify-content-md-center order-1 order-md-2">
       <CenterLogo className="header-row">
         <div className="header-logo">
-          <a href="https://thewhy.kr/">
+          <a href="/">
             <img
               alt="Porto"
               width="200"

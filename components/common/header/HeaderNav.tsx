@@ -12,7 +12,7 @@ function NavItem({ title, url, items }: MenuProps) {
         <ul className="dropdown-menu">
           {items.map((item) => (
             <li key={item.id}>
-              <a className="dropdown-item" href={`https://thewhy.kr${item.subUrl}`}>
+              <a className="dropdown-item" href={`/${item.subUrl}`}>
                 {item.subTitle}
               </a>
             </li>
