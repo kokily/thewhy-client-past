@@ -4,7 +4,7 @@ const next = require('next');
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
-const redirectHttps = require('redirect-https');
+const { default: enforceHttps } = require('koa-sslify');
 const serve = require('koa-static');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -33,6 +33,11 @@ devApp.prepare().then(() => {
   });
 
   app.use(serve('./public'));
+  app.use(
+    enforceHttps({
+      port: 443,
+    })
+  );
   app.use(router.routes());
 
   let server;
