@@ -4,6 +4,7 @@ const next = require('next');
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
+const redirectHttps = require('redirect-https');
 const serve = require('koa-static');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -38,7 +39,7 @@ devApp.prepare().then(() => {
   let server2;
 
   if (config.ssl) {
-    server2 = http.createServer(app.callback());
+    server2 = http.createServer(app.callback(), app.use(redirectHttps()));
     server = https.createServer(
       {
         key: fs.readFileSync(`${process.env.SSL_KEY}`),
