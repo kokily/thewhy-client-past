@@ -5,8 +5,9 @@ import { READ_STORY } from '../../../libs/graphql/stories';
 import { StoryType } from '../../../libs/types';
 import WriteLayout from '../../../components/common/WriteLayout';
 import AddHeaderContainer from './AddHeaderContainer';
-import AddPreview from '../../../components/stories/AddPreview';
+
 import AddContentContainer from './AddContentContainer';
+import AddPreview from '../../../components/stories/temp/AddPreview';
 
 interface EditProps {
   edit?: boolean;
