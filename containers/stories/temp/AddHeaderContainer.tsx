@@ -1,10 +1,10 @@
 import React from 'react';
 import { useApolloClient, useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
-import { StoryType } from '../../libs/types';
-import { ADD_STORY, UPDATE_STORY } from '../../libs/graphql/stories';
-import { devServer, isProd, prodServer } from '../../libs/constants';
-import AddHeader from '../../components/stories/AddHeader';
+import AddHeader from '../../../components/stories/temp/AddHeader';
+import { isProd, prodServer, devServer } from '../../../libs/constants';
+import { ADD_STORY, UPDATE_STORY } from '../../../libs/graphql/stories';
+import { StoryType } from '../../../libs/types';
 
 interface AddHeaderContainerProps {
   storyId: string;

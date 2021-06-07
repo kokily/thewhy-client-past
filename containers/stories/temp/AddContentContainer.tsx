@@ -1,6 +1,6 @@
 import React from 'react';
-import AddContent from '../../components/stories/AddContent';
-import AddTagsContainer from './AddTagsContainer';
+import AddContent from '../../../components/stories/temp/AddContent';
+import AddTagsContainer from '../AddTagsContainer';
 
 interface AddContentContainerProps {
   title: string;
