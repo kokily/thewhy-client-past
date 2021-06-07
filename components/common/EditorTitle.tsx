@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 import oc from 'open-color';
 import TextareaAutosize from 'react-textarea-autosize';
 
@@ -14,6 +14,7 @@ const style = css`
   font-weight: bold;
   color: ${oc.gray[9]};
   margin-bottom: 1rem;
+  overflow: hidden;
 
   &::placeholder {
     color: ${oc.gray[5]};

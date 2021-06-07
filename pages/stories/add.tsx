@@ -1,11 +1,11 @@
 import React from 'react';
+import WriteStoryContainer from '../../containers/stories/WriteStoryContainer';
 import useAdmin from '../../libs/hooks/useAdmin';
-import AddContainer from '../../containers/stories/AddContainer';
 
 function AddStoryPage() {
   useAdmin();
 
-  return <AddContainer />;
+  return <WriteStoryContainer />;
 }
 
 export default AddStoryPage;

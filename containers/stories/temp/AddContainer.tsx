@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import { READ_STORY } from '../../libs/graphql/stories';
-import { StoryType } from '../../libs/types';
-import WriteLayout from '../../components/common/WriteLayout';
+import { READ_STORY } from '../../../libs/graphql/stories';
+import { StoryType } from '../../../libs/types';
+import WriteLayout from '../../../components/common/WriteLayout';
 import AddHeaderContainer from './AddHeaderContainer';
-import AddPreview from '../../components/stories/AddPreview';
+import AddPreview from '../../../components/stories/AddPreview';
 import AddContentContainer from './AddContentContainer';
 
 interface EditProps {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import EditorTitle from './EditorTitle';
+import EditorTitle from '../common/EditorTitle';
 import EditorFooter from './EditorFooter';
 import QuillEditor from '../common/QuillEditor';
 

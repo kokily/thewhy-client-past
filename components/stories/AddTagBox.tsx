@@ -2,6 +2,76 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
+// Styles
+const TagBoxBlock = styled.div`
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  word-break: keep-all;
+
+  p {
+    padding-top: 1.3rem;
+    margin-right: 1.3rem;
+  }
+`;
+
+const TagForm = styled.form`
+  background: none;
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+    &::placeholder {
+      color: ${oc.gray[4]};
+    }
+  }
+  button {
+    color: ${oc.cyan[7]};
+    border: 1px solid ${oc.cyan[7]};
+    border-radius: 8px;
+    background: none;
+    padding: 0.3rem 0.5rem;
+    padding-bottom: 0.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s all;
+    &:hover {
+      background: ${oc.cyan[6]};
+      color: white;
+      border: 1px solid ${oc.cyan[4]};
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+`;
+
+const TagListBlock = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1.2rem;
+`;
+
+const Tag = styled.div`
+  cursor: pointer;
+  color: ${oc.blue[6]};
+  transition: 0.2s all;
+  &:hover {
+    color: ${oc.red[5]};
+  }
+  & + & {
+    margin-left: 1.5rem;
+  }
+`;
+
 // Tag Item
 interface TagItemProps {
   tag: string;
@@ -38,7 +108,7 @@ interface TagBoxProps {
 function AddTagBox({ input, onSubmit, onChangeText, localTags, removeTag }: TagBoxProps) {
   return (
     <TagBoxBlock>
-      <p>태그</p>
+      <p>태그 ☞</p>
 
       <TagForm onSubmit={onSubmit}>
         <input placeholder="엔터로 입력!" value={input} onChange={onChangeText} />
@@ -51,71 +121,3 @@ function AddTagBox({ input, onSubmit, onChangeText, localTags, removeTag }: TagB
 }
 
 export default AddTagBox;
-
-// Styles
-const TagBoxBlock = styled.div`
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  font-size: 1.125rem;
-  font-weight: bold;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  word-break: keep-all;
-  background: ${oc.gray[8]};
-  color: white;
-  p {
-    margin-right: 1.3rem;
-    padding-top: 1rem;
-  }
-`;
-
-const TagForm = styled.form`
-  background: none;
-  input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    background: none;
-    color: rgba(255, 255, 255, 0.9);
-    &::placeholder {
-      color: rgba(255, 255, 255, 0.75);
-    }
-  }
-  button {
-    color: white;
-    border: 1px solid white;
-    border-radius: 8px;
-    background: none;
-    padding: 0.3rem 0.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s all;
-    &:hover {
-      background: white;
-      color: black;
-    }
-    &:active {
-      transform: translateY(2px);
-    }
-  }
-`;
-
-const TagListBlock = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-left: 1.2rem;
-`;
-
-const Tag = styled.div`
-  cursor: pointer;
-  transition: 0.2s all;
-  &:hover {
-    color: ${oc.red[5]};
-  }
-  & + & {
-    margin-left: 0.6rem;
-  }
-`;
