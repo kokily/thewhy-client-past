@@ -4,6 +4,7 @@ import oc from 'open-color';
 import AddTagsContainer from '../../containers/stories/AddTagsContainer';
 import EditorTitle from '../common/EditorTitle';
 import QuillEditor from '../common/QuillEditor';
+import EditorFooter from '../common/EditorFooter';
 
 // Styles
 const Container = styled.div`
@@ -125,6 +126,8 @@ const EditorPane: React.FC<Props> = ({
           </ThumbnailBox>
           <QuillEditor edit={edit} QuillChange={onChangeBody} body={body} />
         </Wrapper>
+
+        <EditorFooter onBack={onBack} onSubmit={onSubmit} />
       </EditorBox>
     </Container>
   );

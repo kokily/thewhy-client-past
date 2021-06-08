@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../common/Button'
+import Button from './Button';
 
 // Styles
 const Container = styled.div`
@@ -20,7 +20,6 @@ const Container = styled.div`
     margin-left: 1rem;
   }
 `;
-
 
 interface Props {
   onBack: () => void;

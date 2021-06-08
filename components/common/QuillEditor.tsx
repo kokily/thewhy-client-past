@@ -97,7 +97,7 @@ const QuillEditor: React.FC<Props> = ({ edit, QuillChange, body }) => {
 
       const range = quillIns.current.getSelection(true);
 
-      quillIns.current.insertEmbed(range.index, 'image', `https://image.thewhy.kr/${data.key}`);
+      quillIns.current.insertEmbed(range.index, 'image', `https://d3cz7blqhirvsp.cloudfront.net/${data.key}`);
       quillIns.current.setSelection(range.index + 1);
     };
   };

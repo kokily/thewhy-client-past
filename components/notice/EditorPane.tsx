@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import EditorTitle from '../common/EditorTitle';
-import EditorFooter from './EditorFooter';
+import EditorFooter from '../common/EditorFooter';
 import QuillEditor from '../common/QuillEditor';
 
 const Container = styled.div`

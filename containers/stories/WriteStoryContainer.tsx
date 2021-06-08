@@ -64,7 +64,7 @@ const WriteStoryContainer: React.FC<Props> = ({ edit }) => {
 
       const data = await response.json();
 
-      setThumbnail(`https://image.thewhy.kr/${data.key}`);
+      setThumbnail(`https://d3cz7blqhirvsp.cloudfront.net/${data.key}`);
     };
 
     upload.click();
@@ -124,6 +124,8 @@ const WriteStoryContainer: React.FC<Props> = ({ edit }) => {
       setTags(data.ReadStory.story.tags);
     }
   }, [edit, data]);
+
+  if (loading) return null;
 
   return (
     <EditorPane
