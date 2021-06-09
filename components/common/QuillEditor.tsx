@@ -10,6 +10,8 @@ const Container = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   font-size: 1.125rem;
+  min-height: 650px;
+  margin-bottom: 5rem;
 
   .ql-toolbar {
     border: none;
