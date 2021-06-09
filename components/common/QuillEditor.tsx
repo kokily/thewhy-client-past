@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 import { isProd, prodServer, devServer } from '../../libs/constants';
+import DragDrop from './DragDrop';
 
 const Container = styled.div`
   top: 0px;
@@ -23,7 +24,7 @@ const Container = styled.div`
   img {
     width: 100%;
     height: 100%;
-    max-width: 650px!important;
+    max-width: 650px !important;
   }
 
   .ql-video {
@@ -59,6 +60,7 @@ export const modules = {
       ['link', 'image', 'video', 'formula'],
       ['clean'],
     ],
+    ImageDrop: true,
   },
 };
 
@@ -97,10 +99,39 @@ const QuillEditor: React.FC<Props> = ({ edit, QuillChange, body }) => {
 
       const range = quillIns.current.getSelection(true);
 
-      quillIns.current.insertEmbed(range.index, 'image', `https://d3cz7blqhirvsp.cloudfront.net/${data.key}`);
+      quillIns.current.insertEmbed(
+        range.index,
+        'image',
+        `https://d3cz7blqhirvsp.cloudfront.net/${data.key}`
+      );
       quillIns.current.setSelection(range.index + 1);
     };
   };
+
+  const onDragDropUpload = useCallback(async (file: File) => {
+    try {
+      const formData = new FormData();
+
+      formData.append('file', file);
+
+      const response = await fetch(`${isProd ? prodServer : devServer}/upload`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+      const range = quillIns.current.getSelection(true);
+
+      quillIns.current.insertEmbed(
+        range.index,
+        'image',
+        `https://d3cz7blqhirvsp.cloudfront.net/${data.key}`
+      );
+      quillIns.current.setSelection(range.index + 1);
+    } catch (err) {
+      alert(err);
+    }
+  }, []);
 
   useEffect(() => {
     if (quillEl.current) {
@@ -128,15 +159,18 @@ const QuillEditor: React.FC<Props> = ({ edit, QuillChange, body }) => {
 
     if (body) {
       mounted.current = true;
-    
+
       quillIns.current.root.innerHTML = body;
-    }    
+    }
   }, [body]);
 
   return (
-    <Container>
-      <div ref={quillEl} style={{ border: 'none' }} />
-    </Container>
+    <>
+      <Container>
+        <div ref={quillEl} style={{ border: 'none' }} />
+      </Container>
+      <DragDrop onUpload={onDragDropUpload} />
+    </>
   );
 };
 
