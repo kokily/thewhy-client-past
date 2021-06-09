@@ -18,6 +18,7 @@ export const LIST_QUESTIONS = gql`
       questions {
         id
         name
+        body
         isReply
         title
         created_at

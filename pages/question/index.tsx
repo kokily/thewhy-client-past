@@ -25,7 +25,7 @@ function QuestionPage({ metaBody }: { metaBody: string[] }) {
 export const getServerSideProps: GetServerSideProps = async () => {
   const apollo = initializeApollo();
 
-  const questions = await apollo.query<{ ListQuestions: { questions: QuestionType[] | null } }>({
+  const questions = await apollo.query<{ ListQuestions: { questions: QuestionType[] } }>({
     query: LIST_QUESTIONS,
   });
 
