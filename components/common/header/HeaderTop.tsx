@@ -81,7 +81,7 @@ function HeaderTop() {
                 >
                   050-5055-7221
                   <br />
-                  thewhycompany@naver.com
+                  thewhy@thewhy.kr
                 </p>
               </div>
             </div>

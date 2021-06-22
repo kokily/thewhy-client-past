@@ -5,7 +5,7 @@ function useKakaoMap() {
 
   useEffect(() => {
     if (kakaoMap && kakaoMap.current) {
-      const coords = new (window as any).daum.maps.LatLng(37.5146843299638, 127.06058006215);
+      const coords = new (window as any).daum.maps.LatLng(37.613030445578595, 127.1535812801483);
       const options = { center: coords, level: 2 };
       const map = new (window as any).daum.maps.Map(kakaoMap.current, options);
       const marker = new (window as any).daum.maps.Marker({ position: coords, map });

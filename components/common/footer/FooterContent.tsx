@@ -11,15 +11,19 @@ function FooterContent() {
       <h5 className="text-3 mb-3 pb-1">Contact Us</h5>
       <p className="text-8 text-color-light font-weight-bold">050-5055-7221</p>
       <p className="mb-2">Tel: 050-5055-7221</p>
-      <p className="mb-2">Fax: (0504) </p>
+      <p className="mb-2">Fax: 050-4386-7221 </p>
       <ul className="list list-icons list-icons-lg">
         <li className="mb-1">
           <i className="far fa-dot-circle text-color-primary" />
-          <p className="m-0">서울시 강남구 영동대로 602, 6층 F231</p>
+          <p className="m-0">
+            경기도 남양주시 다산중앙로19번길 25-23, 에프508호
+            <br />
+            (다산동, 다산진건블루웨일지식산업센터 2차)
+          </p>
         </li>
         <li className="mb-1">
           <i className="far fa-envelope text-color-primary" />
-          <p className="m-0">thewhycompany@naver.com</p>
+          <p className="m-0">thewhy@thewhy.kr</p>
         </li>
       </ul>
       <ul className="footer-social-icons social-icons mt-4" style={{ transition: '0.3s all' }}>
@@ -39,7 +43,7 @@ function FooterContent() {
     <div className="col-md-6 mb-4 mb-lg-0">
       <h5 className="text-3 mb-1">회사소개</h5>
       <p className="mt-2 mb-2">
-        더와이컴퍼니는 행복한 삶을 꿈꾸는 &quot;커뮤니케이션&quot; 전문 교육 컨설팅 회사입니다.
+        더와이컨설팅은 행복한 삶을 꿈꾸는 &quot;커뮤니케이션&quot; 전문 교육 컨설팅 회사입니다.
       </p>
       <p className="mt-2 mb-2">
         우리가 존재하는 이유는 <strong className="text-3">&quot;행복한 관계&quot;</strong>를 꿈꾸는
