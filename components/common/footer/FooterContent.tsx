@@ -46,11 +46,11 @@ function FooterContent() {
         더와이컨설팅은 행복한 삶을 꿈꾸는 &quot;커뮤니케이션&quot; 전문 교육 컨설팅 회사입니다.
       </p>
       <p className="mt-2 mb-2">
-        우리가 존재하는 이유는 <strong className="text-3">&quot;행복한 관계&quot;</strong>를 꿈꾸는
-        것입니다.
+        우리가 존재하는 이유는 커뮤니케이션을 통해 개인과 조직의 행복을 돕는 것입니다.
       </p>
       <p className="mt-2 mb-2">
-        우리의 비전은 믿을 수 있는 <strong className="text-3">커뮤니케이터</strong>가 되는 것입니다.
+        우리의 비전은 대한민국의 직장인들이 모두 행복해 할 때까지 그래서 대한민국을 대표하는
+        커뮤니케이션 전문가가 되는 것입니다.
       </p>
 
       <div className="row pt-3">

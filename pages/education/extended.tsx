@@ -11,7 +11,7 @@ function ExtendedPage() {
         <link rel="canonical" href="https://thewhy.kr/education/extended" />
         <meta
           name="keywords"
-          content="Extended-DISC 커뮤니케이션, 커뮤니케이션 교육, 더와이컴퍼니"
+          content="이디스크,디스크교육,고객성향,고객응대방법,소통,조직활성화,DISC"
         />
         <meta
           name="description"

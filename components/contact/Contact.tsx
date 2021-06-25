@@ -27,7 +27,7 @@ function Contact({ name, email, subject, body, onChange, onSubmit }: ContactProp
         <li>
           <i className="fas fa-map-marker-alt top-6" />
           <strong className="text-dark">주소 : </strong>
-          서울시 강남구 영동대로 602, 6층 F231
+          경기도 남양주시 다산중앙로19번길 25-23, 에프508호
         </li>
         <li>
           <i className="fas fa-phone top-6" />
@@ -37,7 +37,7 @@ function Contact({ name, email, subject, body, onChange, onSubmit }: ContactProp
         <li>
           <i className="fas fa-envelope top-6" />
           <strong className="text-dark">이메일 : </strong>
-          thewhycompany@naver.com
+          thewhy@thewhy.kr
         </li>
       </ul>
     </div>
