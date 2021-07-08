@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import NaverIcon from '../NaverIcon';
+import Logo from './Logo.svg';
 
 const RightContentBox = styled.div`
   @media screen and (max-width: 765px) {
@@ -46,14 +47,7 @@ function HeaderTop() {
       <CenterLogo className="header-row">
         <div className="header-logo">
           <a href="/">
-            <img
-              alt="Porto"
-              width="200"
-              height="96"
-              data-sticky-width="200"
-              data-sticky-height="82"
-              src="/img/main-logo-fixed.png"
-            />
+            <Logo width={200} height={96} />
           </a>
         </div>
       </CenterLogo>
