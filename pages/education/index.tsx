@@ -7,7 +7,7 @@ function EducationPage() {
   return (
     <>
       <Head>
-        <title>서비스 커뮤니케이션 - 더와이컴퍼니</title>
+        <title>서비스 커뮤니케이션 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/education" />
         <meta
           name="keywords"

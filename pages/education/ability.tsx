@@ -7,7 +7,7 @@ function AbilityPage() {
   return (
     <>
       <Head>
-        <title>직무 역량강화 - 더와이컴퍼니</title>
+        <title>직무 역량강화 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/education/ability" />
         <meta
           name="keywords"

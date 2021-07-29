@@ -7,7 +7,7 @@ function AboutPage() {
   return (
     <>
       <Head>
-        <title>더와이컴퍼니를 소개합니다</title>
+        <title>더와이컨설팅을 소개합니다 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/about" />
       </Head>
       <PageTemplate>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Footer from '../education/svg/footer.svg';
 
 const UL = styled.ul`
   border-top: 2px solid #493586;
@@ -100,7 +101,7 @@ function Online() {
               </div>
             </div>
 
-            <img className="img-fluid mt-5 mb-5" src="/img/education/edu_footer.png" alt="" />
+            <Footer style={{ marginTop: '5rem', marginBottom: '5rem' }} />
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ function About() {
                   data-appear-animation="maskUp"
                   style={{
                     animationDelay: '300ms',
-                    fontFamily: '윤고딕',
+                    fontFamily: '윤고딕310',
                     fontSize: '31px',
                     fontWeight: 600,
                     color: '#463884',
@@ -75,7 +75,7 @@ function About() {
                   data-appear-animation="maskUp"
                   style={{
                     animationDelay: '300ms',
-                    fontFamily: '윤고딕',
+                    fontFamily: '윤고딕310',
                     fontSize: '31px',
                     fontWeight: 600,
                     color: '#463884',

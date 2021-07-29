@@ -7,7 +7,7 @@ function ExtendedPage() {
   return (
     <>
       <Head>
-        <title>확장된 DISC 커뮤니케이션 - 더와이컴퍼니</title>
+        <title>확장된 DISC 커뮤니케이션 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/education/extended" />
         <meta
           name="keywords"

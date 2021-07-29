@@ -19,7 +19,7 @@ function ReadStoryPage({ story }: { story: StoryType }) {
       <Head>
         {story && (
           <>
-            <title>{story.title} - 더와이컴퍼니</title>
+            <title>{story.title} - 더와이컨설팅</title>
             <meta name="keywords" content={tags} />
             <meta name="description" content={description} />
           </>

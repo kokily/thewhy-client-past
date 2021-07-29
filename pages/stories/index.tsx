@@ -12,7 +12,7 @@ function StoriesPage({ metaBody, metaTags }: { metaBody: string[]; metaTags: str
   return (
     <>
       <Head>
-        <title>The Y 이야기 - 더와이컴퍼니</title>
+        <title>The Y 이야기 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/stories" />
         {metaBody && <meta name="description" content={metaBody.join()} />}
         {metaTags && <meta name="keywords" content={metaTags.join()} />}

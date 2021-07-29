@@ -18,7 +18,7 @@ function ReadNoticePage({ notice }: { notice: NoticeType }) {
       <Head>
         {notice && (
           <>
-            <title>{notice.title} - 더와이컴퍼니</title>
+            <title>{notice.title} - 더와이컨설팅</title>
             <meta name="description" content={description} />
           </>
         )}

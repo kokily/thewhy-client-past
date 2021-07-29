@@ -183,8 +183,8 @@ function AddQuestion({
                       <div className="form-row">
                         <div className="form-group col">
                           <pre style={{ whiteSpace: 'pre-line' }}>
-                            더와이컴퍼니는 교육 문의, 서비스 신청 등을 위해 아래와 같이 개인 정보를
-                            수집, 활용하고 있습니다.
+                            (주)더와이컨설팅은 교육 문의, 서비스 신청 등을 위해 아래와 같이 개인
+                            정보를 수집, 활용하고 있습니다.
                             <br />
                             <br />
                             1. 수집 항목 및 활용 목적

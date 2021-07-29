@@ -7,7 +7,7 @@ function LeaderPage() {
   return (
     <>
       <Head>
-        <title>리더 커뮤니케이션 - 더와이컴퍼니</title>
+        <title>리더 커뮤니케이션 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/education/leader" />
         <meta name="keywords" content="리더의말하기,리더역량,리더코칭,리더교육,갈등관리" />
         <meta

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Logo from './svg/service.svg';
+import Footer from './svg/footer.svg';
 
 const UL = styled.ul`
   border-top: 2px solid #493586;
@@ -16,7 +18,7 @@ function Service() {
       <div className="row">
         <div className="col">
           <div className="post-image">
-            <img className="img-fluid" src="/img/education/edu01.png" alt="Service" />
+            <Logo />
           </div>
         </div>
       </div>
@@ -119,7 +121,7 @@ function Service() {
             </div>
           </div>
 
-          <img className="img-fluid mt-5 mb-5" src="/img/education/edu_footer.png" alt="" />
+          <Footer style={{ marginTop: '5rem', marginBottom: '5rem' }} />
         </div>
       </div>
     </div>

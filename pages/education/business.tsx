@@ -7,7 +7,7 @@ function BusinessPage() {
   return (
     <>
       <Head>
-        <title>비즈니스 커뮤니케이션 - 더와이컴퍼니</title>
+        <title>비즈니스 커뮤니케이션 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/education/business" />
         <meta
           name="keywords"

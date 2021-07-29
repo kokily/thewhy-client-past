@@ -10,23 +10,23 @@ import 'react-quill/dist/quill.snow.css';
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: '윤고딕310';
-    src: url('/fonts/윤고딕310.ttf');
+    src: url('/fonts/YDIYGO310.ttf');
   }
   @font-face {
     font-family: '윤고딕320';
-    src: url('/fonts/윤고딕320.ttf');
+    src: url('/fonts/YDIYGO320.ttf');
   }
   @font-face {
     font-family: '윤고딕330';
-    src: url('/fonts/윤고딕330.ttf');
+    src: url('/fonts/YDIYGO330.ttf');
   }
   @font-face {
     font-family: '윤고딕340';
-    src: url('/fonts/윤고딕340.ttf');
+    src: url('/fonts/YDIYGO340.ttf');
   }
   @font-face {
     font-family: '윤고딕350';
-    src: url('/fonts/윤고딕350.ttf');
+    src: url('/fonts/YDIYGO350.ttf');
   }
 `;
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './svg/footer.svg';
 
 function Ability() {
   return (

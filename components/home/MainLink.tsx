@@ -42,6 +42,9 @@ function FlipCard({ url, img, title, sub, onClick }: CardProps) {
               fontFamily: '윤고딕340',
               fontSize: '23px',
               color: '#463884',
+              fontStretch: '94%',
+              lineHeight: '27.6pt',
+              letterSpacing: '-1px',
             }}
           >
             {title}
@@ -56,7 +59,7 @@ function FlipCard({ url, img, title, sub, onClick }: CardProps) {
               fontFamily: '윤고딕310',
               fontSize: '19px',
               color: '#000000',
-              lineHeight: 1.3,
+              lineHeight: '26px',
             }}
           >
             {sub}

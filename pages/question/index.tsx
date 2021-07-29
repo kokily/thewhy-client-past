@@ -11,7 +11,7 @@ function QuestionPage({ metaBody }: { metaBody: string[] }) {
   return (
     <>
       <Head>
-        <title>교육 문의 - 더와이컴퍼니</title>
+        <title>교육 문의 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/questions" />
         {metaBody && <meta name="description" content={metaBody.join()} />}
       </Head>

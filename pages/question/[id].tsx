@@ -19,7 +19,7 @@ function ReadQuestion({ question }: { question: QuestionType }) {
       <Head>
         {question && (
           <>
-            <title>{question.title} - 더와이컴퍼니</title>
+            <title>{question.title} - 더와이컨설팅</title>
             <meta name="keywords" content={keywords} />
             <meta name="description" content={description} />
           </>

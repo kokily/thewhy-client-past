@@ -11,7 +11,7 @@ function NoticePage({ metaBody }: { metaBody: string[] }) {
   return (
     <>
       <Head>
-        <title>공지사항 - 더와이컴퍼니</title>
+        <title>공지사항 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/notice" />
         {metaBody && <meta name="description" content={metaBody.join()} />}
       </Head>

@@ -60,17 +60,17 @@ function Question({
                       </td>
                       <td>
                         {data.isReply ? (
-                          <strong style={{ color: 'blue' }}>{data.title}</strong>
+                          <strong style={{ color: '#202020' }}>{data.title}</strong>
                         ) : (
-                          <span style={{ color: 'red' }}>{data.title}</span>
+                          <span style={{ color: '#d67272' }}>{data.title}</span>
                         )}
                       </td>
                       <td style={{ textAlign: 'center' }}>{data.name}님</td>
                       <td style={{ textAlign: 'center' }}>
                         {data.isReply ? (
-                          <strong style={{ color: 'blue' }}>완료</strong>
+                          <strong style={{ color: '#202020' }}>완료</strong>
                         ) : (
-                          <span style={{ color: 'red' }}>미진행</span>
+                          <span style={{ color: '#d67272' }}>미진행</span>
                         )}
                       </td>
                     </tr>

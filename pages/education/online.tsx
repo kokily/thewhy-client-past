@@ -7,7 +7,7 @@ function OnlinePage() {
   return (
     <>
       <Head>
-        <title>온라인 프로그램 - 더와이컴퍼니</title>
+        <title>온라인 프로그램 - 더와이컨설팅</title>
         <link rel="canonical" href="https://thewhy.kr/education/online" />
         <meta
           name="keywords"
