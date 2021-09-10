@@ -22,7 +22,7 @@ function HeaderTop() {
                 </p>
                 <ul className="social-icons mt-2 text-center">
                   <li className="social-icons-youtube ml-0">
-                    <a href="https://www.youtube.com/channel/UCggECPaCiuurAttkyNdWWDg/featured">
+                    <a href="https://www.youtube.com/channel/UCuA_-IaB8hoFa6c5SWyyqrg?view_as=subscriber">
                       <i className="fab fa-youtube text-2" />
                     </a>
                   </li>

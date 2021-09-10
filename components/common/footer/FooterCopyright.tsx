@@ -1,6 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
+import useMedia from '../../../libs/hooks/useMedia';
+
+const Pane = styled.p`
+  strong {
+    color: #a1a1a1;
+  }
+`;
 
 function FooterCopyright() {
+  const isSmall = useMedia(`(max-width: 992px)`);
+
   return (
     <div className="footer-copyright">
       <div className="container py-2">
@@ -12,7 +22,23 @@ function FooterCopyright() {
           </div>
 
           <div className="col-lg-7 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
-            <p>Copyright(c) 2021. All Right Reserved.</p>
+            {isSmall ? (
+              <>
+                <Pane>
+                  Copyright(c) 2021. All RightReserved.
+                  <br />
+                  <strong>사업자등록번호</strong> 640-88-02162
+                  <br />
+                  <strong>통신판매업신고</strong> 제2021-다산-0477
+                </Pane>
+              </>
+            ) : (
+              <Pane>
+                Copyright(c) 2021. All Right Reserved. <strong>사업자등록번호</strong> 640-88-02162
+                |&nbsp;
+                <strong>통신판매업신고</strong> 제2021-다산-0477
+              </Pane>
+            )}
           </div>
 
           <div className="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
