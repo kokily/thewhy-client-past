@@ -23,6 +23,7 @@ const routes = [
   '/stories',
   '/notice',
   '/question',
+  '/term'
 ];
 
 const pages = routes.map((page) => HOME_DOMAIN + page);
