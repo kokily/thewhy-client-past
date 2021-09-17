@@ -53,9 +53,9 @@ function FooterCopyright() {
                 </li>
                 <li>
                   <i className="fas fa-angle-right" />
-                  <a href="/sitemap" className="ml-1 text-decoration-none">
+                  <a href="/term" className="ml-1 text-decoration-none">
                     {' '}
-                    사이트맵
+                    이용약관
                   </a>
                 </li>
                 <li>
