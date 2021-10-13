@@ -28,7 +28,7 @@ function FooterContent() {
       </ul>
       <ul className="footer-social-icons social-icons mt-4" style={{ transition: '0.3s all' }}>
         <li className="social-icons-youtube mr-1">
-          <a href="https://www.youtube.com/channel/UCggECPaCiuurAttkyNdWWDg/featured">
+          <a href="https://www.youtube.com/channel/UCuA_-IaB8hoFa6c5SWyyqrg?view_as=subscriber">
             <i className="fab fa-youtube text-2" />
           </a>
         </li>
